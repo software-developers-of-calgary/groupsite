@@ -56,7 +56,6 @@ const Header = (props) => {
       </Menu.Item>
     );
   }
-  debugger;
   var pages = props.pages;
   let navItems = [];
   for (var i = 0; i < pages.length; i++) {
