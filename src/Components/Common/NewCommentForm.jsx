@@ -3,7 +3,7 @@ import 'antd/dist/antd.css';
 import Form from 'antd/es/form'
 import Input from 'antd/es/input'
 import Button from 'antd/es/button'
-
+import { useGlobal } from '../../state';
 
 const layout = {
   labelCol: {
@@ -22,6 +22,7 @@ const tailLayout = {
 
 
 const NewCommentForm = props => {
+  const [ global ] = useGlobal()
   const [form] = Form.useForm();
 
   useEffect(() => {
@@ -51,9 +52,10 @@ const NewCommentForm = props => {
         <Button type="secondary" onClick={()=> form.resetFields()}>
           Cancel
         </Button>
-        <Button type="primary" htmlType="submit" disabled={props.disabled}>
+        <Button type="primary" htmlType="submit" disabled={props.disabled || !global.user}>
           Submit
         </Button>
+        {!global.user && <a href={'/login'}>Login to add a comment</a>}
       </Form.Item>
     </Form>
   );
