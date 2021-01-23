@@ -1,5 +1,11 @@
 body {
-  background-color: lightgrey;
+  background-color: lightgrey!important;
+}
+
+.content {
+  max-width: 1250px;
+  margin: auto;
+  background-color: white;
 }
 
 .App {
