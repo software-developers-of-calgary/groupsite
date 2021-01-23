@@ -1,27 +1,12 @@
 import React, { useState } from 'react';
 import { Redirect } from 'react-router'
-import Axios from 'axios';
 import githubIcon from '../../GitHub.png';
 import { URL } from "../../config";
 import qs from 'query-string';
 import { useGlobal } from '../../state';
+import { fetchUser } from '../../state/action';
 
 const backendEndpoint = URL
-
-function fetchUser(token, setLoadUser, setGlobal) {
-  if(!token) return
-  setLoadUser(true)
-  Axios.get(`${backendEndpoint}/user/profile`, { headers: { Authorization: `Bearer ${token}` } })
-  .then((res) => {
-    setGlobal({ ...global, user: res.data.data })
-    setLoadUser(false)
-  })
-  .catch(error => {
-    setLoadUser(false);
-    localStorage.removeItem('serverApiToken');
-    console.log('error', error)
-  })
-}
 
 const getTokenFromQuery = () => {
   const queryValues = qs.parse(window.location.search);
@@ -30,8 +15,8 @@ const getTokenFromQuery = () => {
 
 const Login = () => {
   const [loadingSpinner, setLoadingSpinner] = useState(false)
-  const [loadUser, setLoadUser] = useState(false)
-  const [ global, setGlobal, user ] = useGlobal()
+  const [ global, setGlobal ] = useGlobal()
+  const { loadUser } = global
 
   if(global.user) {
     return <Redirect to="/projects" />
@@ -40,7 +25,7 @@ const Login = () => {
   const token = getTokenFromQuery()
 
   if(storedToken && !loadUser) {
-    fetchUser(storedToken, setLoadUser, setGlobal)
+    fetchUser(storedToken, global, setGlobal)
     return (
       <div>
         <button type="primary" loading={"loading"}>
