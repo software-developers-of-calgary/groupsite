@@ -2,8 +2,8 @@ import React from "react";
 import ProjectSummary from './ProjectSummary';
 import ProjectForm from './NewProject'
 import axios from 'axios';
-import Button from 'antd/es/button';
 import { URL } from "../../config";
+import AddProjectButton from './Project/AddProjectButton'
 
 class Projects extends React.Component {
   constructor(props) {
@@ -70,6 +70,7 @@ class Projects extends React.Component {
 
   render() {
     const { error, isLoaded, items } = this.state;
+
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
@@ -83,14 +84,11 @@ class Projects extends React.Component {
             display={this.state.showProjectForm ? 'block' : 'none'}
             resetSwitch={this.state.resetProjectFormSwitch}
             />
-          <Button
-            style={{float: 'right',
-                    margin: '20px' }}
-            type="primary"
-            onClick={() => {this.setState({ showProjectForm: !this.state.showProjectForm })}}
+          <AddProjectButton
+            action={() => {this.setState({ showProjectForm: !this.state.showProjectForm })}}
+            text={ this.state.showProjectForm ? 'Cancel' : 'Add new project' }
           >
-            {this.state.showProjectForm ? 'Cancel' : 'Add new project'}
-          </Button>
+          </AddProjectButton>
           <br/>
           <br/>
           { items.map(project => <ProjectSummary props={project} key={project.id} /> ) }
