@@ -1,0 +1,29 @@
+.home-content {
+  min-height: 400px;
+  background-color: rgb(255, 255, 255, 0.4);
+  width: auto;
+  margin-left: 10%;
+  margin-right: 10%;
+  font-weight: bold;
+}
+
+.home-background {
+  /* background-repeat: no-repeat; */
+  width: auto;
+  height: 100%;
+  /* background-size: cover; Resize the background image to cover the entire container */
+  /* background-position: center; Center the image */
+}
+
+.title-image {
+  width: 60%;
+  min-width: 200px;
+}
+
+.home-wrapper {
+  background-image: url("../../hackathon_background.jpg");
+  background-size: cover;
+  margin-left: -10px;
+  margin-top: -3px;
+  text-align: center;
+}

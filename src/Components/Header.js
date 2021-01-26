@@ -1,11 +1,11 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
-import logo from "../Logo3.1.png";
+import logo from "../sdc_logo_bold.jpg";
 import { useGlobal } from "../state";
 import "antd/dist/antd.css";
 import Menu from "antd/es/menu";
 import Button from "antd/es/button";
-import { fetchUser } from '../state/action';
+import { fetchUser } from "../state/action";
 
 const firstTwoLetters = (str) =>
   !str || str.length < 3 ? str : str.substring(0, 2);
@@ -49,20 +49,20 @@ function authButton(authenticated, onClick) {
 
 const autoLogin = (authenticated, global, setGlobal) => {
   if (authenticated) {
-    return
+    return;
   }
-  const storedToken = localStorage.getItem('serverApiToken')
+  const storedToken = localStorage.getItem("serverApiToken");
   if (!storedToken || global.loadUser) {
-    return
+    return;
   }
-  fetchUser(storedToken, global, setGlobal)
-}
+  fetchUser(storedToken, global, setGlobal);
+};
 
 const Header = (props) => {
   const [global, setGlobal] = useGlobal();
   const authenticated = global.user;
 
-  autoLogin(authenticated, global, setGlobal)
+  autoLogin(authenticated, global, setGlobal);
   var pages = props.pages;
   let navItems = [];
   for (var i = 0; i < pages.length; i++) {
@@ -81,7 +81,7 @@ const Header = (props) => {
       className={"header"}
     >
       <Menu.Item key="logo" title="logo">
-        <Link to="home">
+        <Link to="/">
           {" "}
           <img src={logo} style={{ height: "45px" }} />
         </Link>

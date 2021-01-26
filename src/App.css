@@ -1,5 +1,5 @@
 body {
-  background-color: lightgrey!important;
+  background-color: lightgrey !important;
 }
 
 .content {
@@ -35,7 +35,7 @@ nav {
   z-index: 100;
 }
 
-.navbar-brand>img{
+.navbar-brand > img {
   height: 2rem;
   opacity: 0.5;
 }
@@ -44,17 +44,15 @@ nav {
   background-color: #eee;
 } */
 
-.nav-link:hover{
+.nav-link:hover {
   cursor: pointer;
 }
 
-.content{
-  padding: 0px,0px,8px,8px;
+.content {
+  padding: 0px, 0px, 8px, 8px;
 }
 footer {
-
   text-align: center;
-
 }
 
 .App-link {
@@ -84,28 +82,28 @@ footer {
   /* background-color: #eee; */
 }
 
-.wSidebar{
+.wSidebar {
   padding-left: 0;
 }
 
-.project-container{
+.project-container {
   border: #282c34;
   border-style: solid;
 }
 
-.projectSummary{
-  font:bold;
-  font-size:180%;
-  text-color:green;
+.projectSummary {
+  font: bold;
+  font-size: 180%;
+  text-color: green;
 }
 
-.detailSummary{
-  font:bold;
-  font-size:130%;
-  text-color:green;
+.detailSummary {
+  font: bold;
+  font-size: 130%;
+  text-color: green;
 }
 
-.sidebar{
+.sidebar {
   height: 50px;
   padding-top: 50%;
   padding-right: 5%;
@@ -113,13 +111,13 @@ footer {
   overflow: auto;
 }
 
-.sidebutton{
+.sidebutton {
   letter-spacing: 1px;
   font-weight: bold;
 }
 
-.sticky{
-  color:red;
+.sticky {
+  color: red;
   position: sticky;
   position: -webkit-sticky;
   width: 100px;
@@ -127,8 +125,8 @@ footer {
   top: 20px;
   background-color: black;
 }
-.box{
-  padding-top:10%;
+.box {
+  padding-top: 10%;
   padding-bottom: 10%;
   overflow: auto;
   /* background-color: #eee; */
@@ -137,25 +135,27 @@ footer {
   margin-top: 20px;
 }
 
-.CCfooter{
+.CCfooter {
   position: absolute;
   bottom: 0px;
   z-index: 10;
 }
 
-.white{
+.white {
   color: white;
 }
 
-.invisible{
-  display: none
+.invisible {
+  display: none;
 }
 
-h1, h2{
+h1,
+h2 {
   text-align: center;
 }
 
-.footer, .header {
+.footer,
+.header {
   background-color: orange !important;
 }
 

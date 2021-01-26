@@ -10,6 +10,9 @@ import ProjectPage from "./Components/Pages/ProjectPage";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
+function About() {
+  return "";
+}
 class App extends Component {
   constructor(props) {
     super(props);
@@ -36,9 +39,9 @@ class App extends Component {
           />
           <div style={{ marginLeft: "10px", minHeight: "calc(100vh - 110px)" }}>
             <Switch>
+              <Route exact path="/" component={Home} />
               <Route exact path="/home" component={Home} />
               <Route exact path="/events" component={Events} />
-
               <Route exact path="/tutorial" component={Tutorial} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/projects/" component={Projects} />
