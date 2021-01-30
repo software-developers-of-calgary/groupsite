@@ -3,10 +3,11 @@ import "./App.css";
 import { Header, Footer, Body } from "./Components";
 import Login from "./Components/Pages/Login";
 import Events from "./Components/Events";
+import ProjectPage from "./Components/Pages/EventPage";
 import Tutorial from "./Components/Pages/Tutorial";
 import Home from "./Components/Pages/Home";
 import Projects from "./Components/Pages/Projects";
-import ProjectPage from "./Components/Pages/ProjectPage";
+import EventPage from "./Components/Pages/EventPage";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -42,10 +43,10 @@ class App extends Component {
               <Route exact path="/" component={Home} />
               <Route exact path="/home" component={Home} />
               <Route exact path="/events" component={Events} />
+              <Route path={`/events/:eventId`} component={EventPage} />
               <Route exact path="/tutorial" component={Tutorial} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/projects/" component={Projects} />
-              <Route exact path="/projects" component={Projects} />
               <Route path={`/projects/:projectId`} component={ProjectPage} />
             </Switch>
           </div>
