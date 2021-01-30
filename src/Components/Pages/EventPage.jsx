@@ -5,6 +5,7 @@ import Description from '../Common/Description'
 import Row from 'antd/es/row';
 import Col from 'antd/es/col';
 // import { Image } from '@ant-design/icons'
+import TimeLoc from "../Common/TimeLoc";
 
 class ProjectPage extends React.Component {
 
@@ -20,14 +21,14 @@ class ProjectPage extends React.Component {
   }
 
   render() {
+    
     return (
       <div>
         <br/>
         <h2> Software Developers Of Calgary Hackhaton January</h2>
-
         <Row>
           <Col span={8}>
-            hello
+            <TimeLoc date={"2021-01-30"} location={"https://meet.google.com/kgs-gjaa-uzx"}/>
           </Col>
           <Col span={15} >
           <Description collapsed={this.state.isCollapsedSummary} onChange={this.switchCollapse} />
