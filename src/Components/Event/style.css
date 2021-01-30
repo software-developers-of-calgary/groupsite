@@ -1,0 +1,40 @@
+.project-list {
+    border: 1px solid;
+    padding: 1em;
+    list-style: none;
+    height: 40vh;
+    overflow: scroll;
+    margin-top: 4em;
+}
+
+.project {
+    border: 1px solid;
+    border-radius: 15px;
+    margin-bottom: 1em;
+    padding: 1em;
+}
+
+.project h3 {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.project h4 {
+    text-align: center;
+}
+
+.stack-list {
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    padding: 0;
+}
+
+.technology {
+    margin-left: .5em;
+    border: 1px solid;
+    border-radius: 8px;
+    padding: 5px;
+}
+

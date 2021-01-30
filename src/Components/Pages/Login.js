@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Redirect } from 'react-router'
+import { Redirect } from 'react-router';
 import githubIcon from '../../GitHub.png';
 import { URL } from "../../config";
 import qs from 'query-string';

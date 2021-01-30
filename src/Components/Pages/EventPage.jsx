@@ -1,11 +1,12 @@
 import React from "react";
 import 'antd/dist/antd.css';
-import { withRouter } from "react-router";
+import { withRouter } from "react-router-dom";
 import Description from '../Common/Description'
 import Row from 'antd/es/row';
 import Col from 'antd/es/col';
 // import { Image } from '@ant-design/icons'
 import TimeLoc from "../Common/TimeLoc";
+import ProjectList from "../Event/ProjectList";
 
 class ProjectPage extends React.Component {
 
@@ -21,7 +22,7 @@ class ProjectPage extends React.Component {
   }
 
   render() {
-    
+
     return (
       <div>
         <br/>
@@ -35,6 +36,9 @@ class ProjectPage extends React.Component {
           </Col>
           <Col span={1} />
         </Row>
+          <div>
+            <ProjectList />
+          </div>
 
 
       </div>
