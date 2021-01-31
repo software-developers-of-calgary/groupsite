@@ -1,13 +1,17 @@
 import React from 'react';
+import './timeLocStyle.css';
 
 const TimeLoc = ({date, location}) => {
     return (
       <>
-        <div>
-            Date: {date}
-        </div>
-        <div>
-            Location: {location}
+        <div className='button'>
+          <div>
+              Date: {date}
+          </div>
+          <br></br>
+          <div>
+              Location: {location}
+          </div>
         </div>
       </>
     );

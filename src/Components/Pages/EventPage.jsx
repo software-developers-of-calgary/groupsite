@@ -28,8 +28,10 @@ class ProjectPage extends React.Component {
         <br/>
         <h2> Software Developers Of Calgary Hackhaton January</h2>
         <Row>
-          <Col span={8}>
-            <TimeLoc date={"2021-01-30"} location={"https://meet.google.com/kgs-gjaa-uzx"}/>
+          <Col span={7}>
+            <TimeLoc date={"Jan. 30, 2021"} location={"https://meet.google.com/kgs-gjaa-uzx"}/>
+          </Col>
+          <Col span={1}>
           </Col>
           <Col span={15} >
           <Description collapsed={this.state.isCollapsedSummary} onChange={this.switchCollapse} />

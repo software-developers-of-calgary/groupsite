@@ -154,9 +154,16 @@ h2 {
   text-align: center;
 }
 
-.footer,
+/*.footer,
 .header {
   background-color: orange !important;
+}*/
+.header{
+  background-color:rgb(255, 248, 220) !important;
+}
+
+.footer {
+  background-color:rgb(255, 228, 196) !important;
 }
 
 .project-summary {
