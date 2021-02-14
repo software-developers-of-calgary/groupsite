@@ -7,7 +7,7 @@ import {
   InfoSpan,
   InfoUl,
   SubHeaderSpan,
-  Summary
+  Summary,
 } from "./StyledEvent";
 
 export const Event = ({
@@ -17,7 +17,7 @@ export const Event = ({
   summary,
   prereqs,
   photos,
-  links
+  links,
 }) => {
   //const { isPreview, changeIsPreview } = useState(false);
 

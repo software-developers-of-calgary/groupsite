@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Details = styled.details`
   max-width: 40%;
@@ -17,7 +17,7 @@ export const Summary = styled.summary`
   }
 
   &&:before {
-    content: '+';
+    content: "+";
     font-size: 1.9em;
     margin: -5px 10px 0 0;
   }
