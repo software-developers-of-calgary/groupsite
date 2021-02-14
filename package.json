@@ -7,11 +7,12 @@
     "@fortawesome/free-solid-svg-icons": "^5.7.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
     "antd": "^4.2.2",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
+    "dotenv": "^8.2.0",
     "emotion": "^10.0.23",
     "globalize": "^1.4.2",
-    "moment": "^2.29.1",
     "jshint": "^2.12.0",
+    "moment": "^2.29.1",
     "query-string": "^6.12.1",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
@@ -26,7 +27,19 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm run build",
+    "lint": "eslint --ignore-path .gitignore --ext .js .",
+    "prettier": "prettier --ignore-path .gitignore --write \"**/*.+(js)\"",
+    "check-format": "npm run prettier -- --list-different",
+    "validate": "concurrently \"npm run check-format\" \"npm run lint\""
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,css,md}": "npm run validate"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -37,5 +50,11 @@
     "not ie <= 11",
     "not op_mini all"
   ],
-  "devDependencies": {}
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "eslint": "^7.20.0",
+    "husky": "^5.0.9",
+    "lint-staged": "^10.5.4",
+    "prettier": "^2.2.1"
+  }
 }
