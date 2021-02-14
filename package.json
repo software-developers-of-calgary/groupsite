@@ -13,15 +13,6 @@
     "check-format": "npm run prettier -- --list-different",
     "validate": "concurrently \"npm run check-format\" \"npm run lint\""
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run prettier && lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.js": "eslint --cache --fix",
-    "*.{js,css,md}": "prettier --write"
-  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.15",
     "@fortawesome/free-solid-svg-icons": "^5.7.2",
@@ -48,6 +39,15 @@
     "husky": "^4.3.8",
     "lint-staged": "^10.5.4",
     "prettier": "^2.2.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run prettier && lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*.{js,css,md}": "prettier --write"
   },
   "eslintConfig": {
     "extends": "react-app"
