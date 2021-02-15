@@ -11,6 +11,10 @@ What you need to do to get involved in the SDGC website project is:
 5. Ready to run the program? `npm start`
 6. Eventually the program will launch your browser as `localhost:3000` and you should see a similar copy to our main website [link](https://sdc.fyi/login)
 
+## Requirements
+
+- Node 10+ (Recomemended v14.x.x)
+
 ## Who is the SDGC?
 
 - A group of people who were/are junior, intermediate and senior developers that just want to meet more of their peers, learn more and share their passion for software development.
