@@ -21,8 +21,8 @@ What you need to do to get involved in the SDGC website project is:
 
 ### Organizers
 
-(Simon)[https://www.meetup.com/Software-Developers-Learning-Together/members/266256359/profile/?returnPage=1]
-(Juhász Gergely)[https://www.meetup.com/Software-Developers-Learning-Together/members/263303135/profile/?returnPage=1]
+- (Simon)[https://www.meetup.com/Software-Developers-Learning-Together/members/266256359/profile/?returnPage=1]
+- (Juhász Gergely)[https://www.meetup.com/Software-Developers-Learning-Together/members/263303135/profile/?returnPage=1]
 
 ## Why join the SDGC
 
