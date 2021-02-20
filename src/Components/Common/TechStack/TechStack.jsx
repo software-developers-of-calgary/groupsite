@@ -22,7 +22,7 @@ const getRandomVariant = () => colors[Math.floor(Math.random()*colors.length)]
 
 const TechStack = ({ className = '', techStackAsString }) => (
   <div>
-    {techStackAsString.split(',').map(tech =>
+    {techStackAsString && techStackAsString.split(',').map(tech =>
       <Tag className={className} key={`${tech}-badge`} color={colors[tech]} style={{marginRight: "20px"}}> {tech} </Tag>
     )}
   </div>)

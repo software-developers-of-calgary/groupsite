@@ -3,7 +3,7 @@ import "./App.css";
 import { Header, Footer, Body } from "./Components";
 import Login from "./Components/Pages/Login";
 import Events from "./Components/Events";
-import ProjectPage from "./Components/Pages/EventPage";
+import ProjectPage from "./Components/Pages/ProjectPage";
 import Tutorial from "./Components/Pages/Tutorial";
 import Home from "./Components/Pages/Home";
 import Projects from "./Components/Pages/Projects";

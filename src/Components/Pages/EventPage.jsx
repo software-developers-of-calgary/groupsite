@@ -8,9 +8,10 @@ import Row from 'antd/es/row';
 import Col from 'antd/es/col';
 // import { Image } from '@ant-design/icons'
 import TimeLoc from "../Common/TimeLoc";
+import UserList from "../Common/UserList";
 import ProjectList from "../Event/ProjectList";
 
-class ProjectPage extends React.Component {
+class EventPage extends React.Component {
 
   constructor(props) {
     super(props);
@@ -69,6 +70,7 @@ class ProjectPage extends React.Component {
         <Row>
           <Col span={7}>
             <TimeLoc date={this.state.date} location={this.state.location}/>
+            <UserList />
           </Col>
           <Col span={1}>
           </Col>
@@ -85,4 +87,4 @@ class ProjectPage extends React.Component {
   }
 
 }
-  export default withRouter(ProjectPage);
+  export default withRouter(EventPage);
