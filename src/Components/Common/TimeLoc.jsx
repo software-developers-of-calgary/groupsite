@@ -8,7 +8,6 @@ const TimeLoc = ({date, location}) => {
           <div>
               Date: {date}
           </div>
-          <br></br>
           <div>
               Location: {location}
           </div>

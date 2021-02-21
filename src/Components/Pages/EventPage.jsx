@@ -6,7 +6,6 @@ import { withRouter } from "react-router-dom";
 import Description from '../Common/Description'
 import Row from 'antd/es/row';
 import Col from 'antd/es/col';
-// import { Image } from '@ant-design/icons'
 import TimeLoc from "../Common/TimeLoc";
 import UserList from "../Common/UserList";
 import ProjectList from "../Event/ProjectList";
@@ -24,6 +23,7 @@ class EventPage extends React.Component {
       date: '',
       location: '',
       name: '',
+      users: [],
       description: ''
     };
   }
@@ -33,12 +33,13 @@ class EventPage extends React.Component {
     fetch(URL + `/events/${eventId}`)
       .then(res => res.json())
       .then(
-        ({date, description, location, name}) => {
+        ({date, description, location, name, users}) => {
           this.setState({
             isLoaded: true,
             date,
             description,
             location,
+            users,
             name
           });
         },
@@ -50,6 +51,23 @@ class EventPage extends React.Component {
           });
         }
       )
+  }
+
+  registerUserForEvent(props) {
+    const token = localStorage.getItem('serverApiToken')
+    const eventId = props.match.params.eventId;
+    console.log({token})
+    axios.post(
+      `${URL}/events/${eventId}/users`,
+      '{}',
+      { headers: { Authorization: `Bearer ${token}` } }
+    )
+    .then(response => {
+      this.setState({users: response.data })
+    })
+    .catch(error => {
+      console.log(error);
+    })
   }
 
   switchCollapse = () => {
@@ -69,8 +87,8 @@ class EventPage extends React.Component {
         <h2> {this.state.name} </h2>
         <Row>
           <Col span={7}>
-            <TimeLoc date={this.state.date} location={this.state.location}/>
-            <UserList />
+            <TimeLoc date={this.state.date} location={this.state.location}/> <br/>
+            <UserList users={this.state.users} register={() => this.registerUserForEvent(this.props)}/>
           </Col>
           <Col span={1}>
           </Col>
