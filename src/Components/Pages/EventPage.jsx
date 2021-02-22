@@ -23,6 +23,7 @@ class EventPage extends React.Component {
       date: '',
       location: '',
       name: '',
+      open: '',
       users: [],
       description: ''
     };
@@ -33,14 +34,15 @@ class EventPage extends React.Component {
     fetch(URL + `/events/${eventId}`)
       .then(res => res.json())
       .then(
-        ({date, description, location, name, users}) => {
+        ({date, description, location, name, open, users }) => {
           this.setState({
             isLoaded: true,
             date,
             description,
             location,
             users,
-            name
+            name,
+            open
           });
         },
         (error) => {
@@ -56,7 +58,6 @@ class EventPage extends React.Component {
   registerUserForEvent(props) {
     const token = localStorage.getItem('serverApiToken')
     const eventId = props.match.params.eventId;
-    console.log({token})
     axios.post(
       `${URL}/events/${eventId}/users`,
       '{}',
@@ -81,6 +82,7 @@ class EventPage extends React.Component {
     if (this.state.error) {
       return 'unexpected error' // TODO create comp
     }
+    // const isAddUserButtonEnabled = this.state.date
     return (
       <div>
         <br/>
@@ -88,7 +90,7 @@ class EventPage extends React.Component {
         <Row>
           <Col span={7}>
             <TimeLoc date={this.state.date} location={this.state.location}/> <br/>
-            <UserList users={this.state.users} register={() => this.registerUserForEvent(this.props)}/>
+            <UserList disabled={!this.state.open } users={this.state.users} register={() => this.registerUserForEvent(this.props)}/>
           </Col>
           <Col span={1}>
           </Col>
@@ -98,6 +100,7 @@ class EventPage extends React.Component {
           <Col span={1} />
         </Row>
           <div>
+            <h2> Projects </h2>
             <ProjectList />
           </div>
       </div>
