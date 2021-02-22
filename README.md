@@ -1,68 +1,46 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Software Developers Group of Calgary (SDGC)
 
-## Available Scripts
+# Join the SDGC Website project!
 
-In the project directory, you can run:
+What you need to do to get involved in the SDGC website project is:
 
-### `npm start`
+1. Join the Discord channel and introduce yourself
+2. Click the Fork button for this [github project](https://github.com/software-developers-of-calgary/groupsite)
+3. Got to your own Fork of the project, usually looks something like this: `http://github.com/[username]/groupsite` and then in your command line `git clone [forked url] SDGC-website`
+4. Once it has cloned (aka downloaded) to your computer then run `npm install`
+5. Ready to run the program? `npm start`
+6. Eventually the program will launch your browser as `localhost:3000` and you should see a similar copy to our main website [link](https://sdc.fyi/login)
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Requirements
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+- Node 10+ (Recomemended v14.x.x)
 
-### `npm test`
+## Who is the SDGC?
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- A group of people who were/are junior, intermediate and senior developers that just want to meet more of their peers, learn more and share their passion for software development.
 
-### `npm run build`
+### Organizers
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* [Simon](https://www.meetup.com/Software-Developers-Learning-Together/members/266256359/profile/?returnPage=1)
+* [Juhász Gergely](https://www.meetup.com/Software-Developers-Learning-Together/members/263303135/profile/?returnPage=1)
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+## Why join the SDGC
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* The SDGC is for all levels of developers!
+* Juniors come to add projects to their portfolio and grow their social network.
+* Intermediates come to improve their code, developer their communication and leadership skills and of course grow their social network
+* Seniors come because they enjoy coding, enjoy teaching, enjoy mentoring and most of all they like to give back what they received when they were Junior and Intermediate developers.
+* No one person fits into the above tightly defined boxes, but this is a summary of the feedback we get from our members.
+* Have fun coding, having fun meeting new friends and something new.
 
-### `npm run eject`
+## Group links:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+* [Discord chat](https://discordapp.com/channels/515951809752465408/515952580103372810)
+* [Website](https://sdc.fyi)
+* [Meetup.com group](https://www.meetup.com/Software-Developers-Learning-Together)
+* [Github Org](https://github.com/software-developers-of-calgary)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Contributors:
+* [Simon](https://www.meetup.com/Software-Developers-Learning-Together/members/266256359/profile/?returnPage=1)
+* [Juhász Gergely](https://www.meetup.com/Software-Developers-Learning-Together/members/263303135/profile/?returnPage=1)
+* Roger Kondrat: [Twitter](https://twitter.com/misterhtmlcss) || [Github](https://github.com/misterhtmlcss)
