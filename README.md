@@ -36,7 +36,7 @@ What you need to do to get involved in the SDGC website project is:
 ## Group links:
 
 - [Discord chat](https://discordapp.com/channels/515951809752465408/515952580103372810)
-- [Website](https://sdc.fyi/login)
+- [Website](https://sdc.fyi)
 - [Meetup.com group](https://www.meetup.com/Software-Developers-Learning-Together)
 - [Github Org](https://github.com/software-developers-of-calgary)
 
