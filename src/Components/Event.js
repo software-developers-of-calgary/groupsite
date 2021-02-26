@@ -1,67 +1,33 @@
 import React from "react";
+import { useHistory } from 'react-router-dom';
 
-import {
-  Details,
-  HeaderSpan,
-  InfoLi,
-  InfoSpan,
-  InfoUl,
-  SubHeaderSpan,
-  Summary
-} from "./StyledEvent";
+const HeaderSpan = {
+  fontSize: '1.9rem',
+  fontWeight: 'bold'
+}
 
-export const Event = ({
-  title,
-  date,
-  location,
-  summary,
-  prereqs,
-  photos,
-  links
-}) => {
-  //const { isPreview, changeIsPreview } = useState(false);
+const eventClicked = (history, eventId) => history.push(`/events/${eventId}`)
 
-  const linkComps = links
-    ? links.map(({ href, linkText }) => (
-        <li>
-          <a key={linkText} href={href}>
-            {linkText}
-          </a>
-        </li>
-      ))
-    : [];
-
-  const imageComps = photos
-    ? photos.map(({ alt, src }) => (
-        <img width={300} key={alt} src={src} alt={alt} />
-      ))
-    : [];
-
+const EventSummary = props => {
+  let history = useHistory();
+  const { title, date, location, summary, id } = props
   return (
-    <Details>
-      <Summary>
-        <HeaderSpan>{title}</HeaderSpan> on{" "}
-        <SubHeaderSpan>{date}</SubHeaderSpan>
-      </Summary>
-      <InfoUl>
-        <InfoLi>
-          <InfoSpan>Location: </InfoSpan>
-          {location}
-        </InfoLi>
-        <InfoLi>
-          <InfoSpan>Summary: </InfoSpan>
-          {summary}
-        </InfoLi>
-        <InfoLi>
-          <InfoSpan>Pre-requisites: </InfoSpan>
-          {prereqs}
-        </InfoLi>
-        <InfoLi>
-          <InfoSpan>Helpful links: </InfoSpan>
-          <ul>{linkComps}</ul>
-        </InfoLi>
-        <InfoLi>{imageComps}</InfoLi>
-      </InfoUl>
-    </Details>
-  );
-};
+    <div onClick={() => eventClicked(history, id)} className={'event-summary'} style={{height: '100%', margin: '25px' }}>
+      <div>
+        <span style={HeaderSpan}>{title}</span> on{" "}
+        <span style={{fontSize: '1rem'}}>{date}</span>
+      </div>
+      <b>Location: </b>
+      <div>
+        {location}
+      </div>
+      <b>Summary: </b>
+      <div style={{maxHeight: '150px', overflow: 'auto'}}>
+        {summary}
+      </div>
+
+    </div>
+  )
+}
+
+export default EventSummary

@@ -1,36 +1,53 @@
-import React, { Fragment, Component } from 'react'
-import {Event} from "./Event"
-import { eventsArray } from "./eventsArray"
+import React, { Component } from 'react'
+import EventSummary from "./Event"
+import { URL } from "../config"
 
 export default class Events extends Component {
-  // handleExpand() {
-  //   this.setState({
-  //     isPreview : False
-  //   })
-  // }
+  state = {
+    error: null,
+    isLoaded: false,
+    events: []
+  };
+
+  componentDidMount() {
+    fetch(URL + "/events")
+      .then(res => res.json())
+      .then(
+        (events) => {
+          console.log('response', events)
+          this.setState({ isLoaded: true, events })
+        },
+        (error) => {
+          console.log(error)
+          this.setState({
+            isLoaded: true,
+            error
+          });
+        }
+      )
+  }
+
+  renderEvents = () => {
+    var storage_array = this.state.events
+    console.log('from renderEvents', storage_array)
+    return this.state.events.map(event => <EventSummary
+      title='Virtual Hackhaton'
+      date={new Date(event.date).toISOString().split('T')[0]}
+      location={event.location}
+      summary={event.description}
+      id={event.id}
+    />)
+  }
+
   render() {
-    var storage_array = eventsArray
-    var events_jsx = []
-    /*var prev_events = []
-    var future_events = []
-    var today = new Date()*/
-    for (var idx in storage_array) {
-      events_jsx.push(<Event
-        title={storage_array[idx].title}
-        date={storage_array[idx].date}
-        time={storage_array[idx].time}
-        location={storage_array[idx].location}
-        summary={storage_array[idx].summary}
-        prereqs={storage_array[idx].prereqs}
-        photos={storage_array[idx].photos}
-        links={storage_array[idx].links}
-        // tutorial={storage_array[idx].tutorial}
-      />)
+    const { error, isLoaded } = this.state;
+
+    if (error) {
+      return <div>Error: {error.message}</div>;
+    } else if (!isLoaded) {
+      return <div>Loading...</div>;
+    } else {
+      return this.renderEvents()
     }
-    return (
-      <Fragment>
-        {events_jsx}
-      </Fragment>
-    )
   }
 }
