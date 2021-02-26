@@ -1,9 +1,9 @@
 import React from "react";
-import ProjectSummary from './ProjectSummary';
 import ProjectForm from './NewProject'
 import axios from 'axios';
 import { URL } from "../../config";
 import AddProjectButton from './Project/AddProjectButton'
+import ProjectList from './Project/ProjectList'
 
 class Projects extends React.Component {
   constructor(props) {
@@ -24,8 +24,6 @@ class Projects extends React.Component {
     axios.post(URL+'/projects', {
       name: formData.name,
       description: formData.description,
-      // difficulty_from : ,
-      // difficulty_to : ,
       selected_stack,
       summary: formData.summary
       },
@@ -33,9 +31,9 @@ class Projects extends React.Component {
     )
     .then(response => {
       const data = response.data[0];
-      const newItemList = [data].concat(projectsPage.state.items)
+      const newItemList = [data].concat(projectsPage.state.projects)
       projectsPage.setState({
-        items: newItemList,
+        projects: newItemList,
         resetProjectFormSwitch: !projectsPage.state.resetProjectFormSwitch,
         showProjectForm: false
       })
@@ -45,56 +43,31 @@ class Projects extends React.Component {
     })
   }
 
-  componentDidMount() {
-    fetch(URL + "/projects")
-      .then(res => res.json())
-      .then(
-        (result) => {
-          this.setState({
-            isLoaded: true,
-            items: result.reverse()
-          });
-        },
-        (error) => {
-          this.setState({
-            isLoaded: true,
-            error
-          });
-        }
-      )
-  }
-
   changeFormVisibility() {
     this.setState({display: !this.setState.display})
   }
 
   render() {
-    const { error, isLoaded, items } = this.state;
-
-    if (error) {
-      return <div>Error: {error.message}</div>;
-    } else if (!isLoaded) {
-      return <div>Loading...</div>;
-    } else {
-      return (
-        <div style={{paddingBottom: '25px'}}>
-          <ProjectForm
-            onSubmit={this.handleAddProject}
-            projectsPage={this}
-            display={this.state.showProjectForm ? 'block' : 'none'}
-            resetSwitch={this.state.resetProjectFormSwitch}
-            />
-          <AddProjectButton
-            action={() => {this.setState({ showProjectForm: !this.state.showProjectForm })}}
-            text={ this.state.showProjectForm ? 'Cancel' : 'Add new project' }
-          >
-          </AddProjectButton>
-          <br/>
-          <br/>
-          { items.map(project => <ProjectSummary props={project} key={project.id} /> ) }
-        </div>
-      );
-    }
+    return (
+      <div>
+        <ProjectForm
+          onSubmit={this.handleAddProject}
+          projectsPage={this}
+          display={this.state.showProjectForm ? 'block' : 'none'}
+          resetSwitch={this.state.resetProjectFormSwitch}
+          />
+        <AddProjectButton
+          action={() => {this.setState({ showProjectForm: !this.state.showProjectForm })}}
+          text={ this.state.showProjectForm ? 'Cancel' : 'Add new project' }
+        />
+        <br/>
+        <br/>
+        <ProjectList
+          onProjectLoaded={projects => this.setState({projects})}
+          projects={this.state.projects}
+        />
+      </div>
+    );
   }
 }
 
