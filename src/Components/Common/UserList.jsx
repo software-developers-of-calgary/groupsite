@@ -10,13 +10,14 @@ const isUserRegistered = (users, currentUser = {}) => users.filter(user => user.
 const UserList = (props) => {
   const { disabled, users, register } = props
   const [global] = useGlobal()
+  const isButtonDisabled = disabled || (!global.user || isUserRegistered(users, global.user))
   return (
     <div>
       <div>
         <div style={{float:'left', display:'inline-block', marginLeft: '90px'}}>
           <h2> Users</h2>
         </div>
-        <Button disabled={disabled || isUserRegistered(users, global.user)} style={{float:"right"}} onClick={register}>
+        <Button disabled={isButtonDisabled} style={{float:"right"}} onClick={register}>
           Register
         </Button>
       </div>
