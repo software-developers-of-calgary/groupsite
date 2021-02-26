@@ -8,7 +8,7 @@ import Row from 'antd/es/row';
 import Col from 'antd/es/col';
 import TimeLoc from "../Common/TimeLoc";
 import UserList from "../Common/UserList";
-import ProjectList from "../Event/ProjectList";
+import ProjectList from "./Project/ProjectList";
 
 class EventPage extends React.Component {
 
@@ -101,7 +101,7 @@ class EventPage extends React.Component {
         </Row>
           <div>
             <h2> Projects </h2>
-            <ProjectList />
+            <ProjectList onProjectLoaded={projects => this.setState({projects})} projects={this.state.projects} style={{margin: 'auto', marginTop: '10px', marginBorron: '10px' }}/>
           </div>
       </div>
     )

@@ -49,7 +49,7 @@ class Projects extends React.Component {
 
   render() {
     return (
-      <div style={{paddingBottom: '25px'}}>
+      <div>
         <ProjectForm
           onSubmit={this.handleAddProject}
           projectsPage={this}

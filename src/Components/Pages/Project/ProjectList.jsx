@@ -35,13 +35,18 @@ class ProjectList extends React.Component {
 
   render() {
     const { error, isLoaded } = this.state;
-    const { projects = []} = this.props
+    const { style = {}, projects = []} = this.props
+
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
       return <div>Loading...</div>;
     } else {
-      return projects.map(project => <ProjectSummary props={project} key={project.id} /> )
+      return (
+        <div style={{marginBottom: '25px'}}>
+          {projects.map(project => <ProjectSummary style={style} props={project} key={project.id} /> )}
+        </div>
+      )
     }
   }
 }
