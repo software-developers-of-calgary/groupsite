@@ -49,6 +49,7 @@ class Projects extends React.Component {
 
   render() {
     return (
+      <div className='project-page'>
       <div>
         <ProjectForm
           onSubmit={this.handleAddProject}
@@ -59,13 +60,15 @@ class Projects extends React.Component {
         <AddProjectButton
           action={() => {this.setState({ showProjectForm: !this.state.showProjectForm })}}
           text={ this.state.showProjectForm ? 'Cancel' : 'Add new project' }
-        />
-        <br/>
-        <br/>
-        <ProjectList
+        />     
+      </div>
+      <div>
+         <ProjectList
           onProjectLoaded={projects => this.setState({projects})}
           projects={this.state.projects}
         />
+      </div>
+
       </div>
     );
   }

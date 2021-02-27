@@ -167,11 +167,21 @@ h2 {
 }
 
 .project-summary {
-  margin: 25px;
-  padding-left: 10px;
-  border: 2px;
-  border-style: groove;
-  max-width: 500px;
+    display: grid;
+    max-width: 1250px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.project-page{
+  display:block;
+}
+
+.project-card {
+  border: 2px solid red;
+  padding: 5px;
+  align-items: start;
 }
 
 .project-summary:hover {
@@ -188,6 +198,7 @@ h2 {
 .event-summary:hover {
   border-color: #61dafb;
 }
+
 
 .centered-text {
   text-align: center;

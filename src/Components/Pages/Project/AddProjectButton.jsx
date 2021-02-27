@@ -9,15 +9,13 @@ const AddProjectButton = ({text, action}) => {
   return (
     <div>
     <Button
-      style={{float: 'left',
-              margin: '20px' }}
       type="primary"
       onClick={action}
       disabled={!global.user}
       >
       {text}
     </Button>
-    {!global.user && <a style={{float: 'left', margin: '20px' }} href={'/login'}>Login to create a project</a>}
+    {!global.user && <a href={'/login'}>Login to create a project</a>}
     </div>
   )
 

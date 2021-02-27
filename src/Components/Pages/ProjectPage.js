@@ -109,6 +109,7 @@ class ProjectPage extends React.Component {
     console.log(this.state);
     const { project, comments } = this.state;
     return (
+    
       <div style={{maxWidth: "1250px", margin: 'auto'}}>
         <div>
         <h1> {project.name} </h1>
