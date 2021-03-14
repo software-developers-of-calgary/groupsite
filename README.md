@@ -43,4 +43,5 @@ What you need to do to get involved in the SDC website project is:
 Contributors:
 * [Simon](https://www.meetup.com/Software-Developers-Learning-Together/members/266256359/profile/?returnPage=1)
 * [Juhász Gergely](https://www.meetup.com/Software-Developers-Learning-Together/members/263303135/profile/?returnPage=1)
+* [Julie Gunawan](https://github.com/JulieGunawan)
 * Roger Kondrat: [Twitter](https://twitter.com/misterhtmlcss) || [Github](https://github.com/misterhtmlcss)
