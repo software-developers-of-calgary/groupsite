@@ -2,6 +2,10 @@
   "name": "website",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">= 12.x.x",
+    "npm": ">= 6.x.x"
+  },
   "scripts": {
     "start": "react-scripts --max_old_space_size=4096 start",
     "build": "react-scripts build",
