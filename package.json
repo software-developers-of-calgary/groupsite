@@ -2,31 +2,56 @@
   "name": "website",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.15",
-    "@fortawesome/free-solid-svg-icons": "^5.7.2",
-    "@fortawesome/react-fontawesome": "^0.1.4",
-    "antd": "^4.2.2",
-    "axios": "^0.19.2",
-    "emotion": "^10.0.23",
-    "globalize": "^1.4.2",
-    "moment": "^2.29.1",
-    "jshint": "^2.12.0",
-    "query-string": "^6.12.1",
-    "react": "^16.8.3",
-    "react-dom": "^16.8.3",
-    "react-highlight": "^0.12.0",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "2.1.5",
-    "reactn": "^2.2.7",
-    "styled-components": "^4.2.0"
+  "engines": {
+    "node": ">= 12.x.x",
+    "npm": ">= 6.x.x"
   },
   "scripts": {
     "start": "react-scripts --max_old_space_size=4096 start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm run build",
+    "lint": "eslint --ignore-path .gitignore --ext .js .",
+    "prettier": "prettier --ignore-path .gitignore --write \"**/*.+(js)\"",
+    "check-format": "npm run prettier -- --list-different",
+    "validate": "concurrently \"npm run check-format\" \"npm run lint\""
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.34",
+    "@fortawesome/free-solid-svg-icons": "^5.15.2",
+    "@fortawesome/react-fontawesome": "^0.1.14",
+    "antd": "^4.2.2",
+    "axios": "^0.21.1",
+    "dotenv": "^8.2.0",
+    "emotion": "^10.0.23",
+    "globalize": "^1.4.2",
+    "moment": "^2.29.1",
+    "jshint": "^2.12.0",
+    "query-string": "^6.12.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-highlight": "^0.13.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.2",
+    "reactn": "^2.2.7",
+    "styled-components": "^5.2.1"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "eslint": "^7.20.0",
+    "husky": "^4.3.8",
+    "lint-staged": "^10.5.4",
+    "prettier": "^2.2.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run prettier && lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*.{js,css,md}": "prettier --write"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -36,6 +61,5 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ],
-  "devDependencies": {}
+  ]
 }
