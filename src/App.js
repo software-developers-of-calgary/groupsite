@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import "./App.css";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import { Header, Footer, Body } from "./Components";
 import Login from "./Components/Pages/Login";
 import Events from "./Components/Events";
@@ -9,7 +10,7 @@ import Home from "./Components/Pages/Home";
 import Projects from "./Components/Pages/Projects";
 import EventPage from "./Components/Pages/EventPage";
 
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import "./App.css";
 
 function About() {
   return "";
@@ -32,6 +33,17 @@ class App extends Component {
   render() {
     return (
       <Router>
+        <Helmet>
+          <title>Software Developers of Calgary</title>
+          <meta
+            name="description"
+            content="The perfect place for developers of all levels to aggregate and level up their skills or help others to do so."
+          />
+          <meta
+            name="keywords"
+            content="calgary, software developers, software projects, hackathons"
+          />
+        </Helmet>
         <div className="content">
           <Header
             page={this.state.page}
