@@ -1,17 +1,18 @@
 import React from "react";
-import axios from 'axios';
+import axios from "axios";
 import { URL } from "../../config";
 import { Button, Comment, Avatar, Tooltip, Input } from "antd";
 import moment from "moment";
-import 'antd/dist/antd.css';
+import "antd/dist/antd.css";
 import { withRouter } from "react-router";
-import NewCommentForm from '../Common/NewCommentForm'
-import TechStack from '../Common/TechStack/TechStack'
+import NewCommentForm from "../Common/NewCommentForm";
+import TechStack from "../Common/TechStack/TechStack";
 // import { Image } from '@ant-design/icons'
 
 const { TextArea } = Input;
 
-const firstTwoLetters = str => (!str || str.length < 3) ? str : str.substring(0, 2)
+const firstTwoLetters = (str) =>
+  !str || str.length < 3 ? str : str.substring(0, 2);
 
 class ProjectPage extends React.Component {
   constructor(props) {
@@ -48,54 +49,48 @@ class ProjectPage extends React.Component {
     <Comment
       author={<a>{comment.display_name}</a>}
       avatar={
-      //   comment.photo?           <Avatar
-      //   src={<Image src={comment.photo} />}
-      // /> :
+        //   comment.photo?           <Avatar
+        //   src={<Image src={comment.photo} />}
+        // /> :
 
         <Button type="text" shape="circle">
           {firstTwoLetters(comment.display_name)}
-      </Button>
+        </Button>
       }
-      content={
-        <p>
-          {comment.comment}
-        </p>
-      }
+      content={<p>{comment.comment}</p>}
       datetime={
         <Tooltip title={moment().format("YYYY-MM-DD HH:mm:ss")}>
           <span>{moment(comment.created_at).fromNow()}</span>
         </Tooltip>
       }
-    >
-    </Comment>
+    ></Comment>
   );
 
   handleAddComment(formData, page) {
-    const token = localStorage.getItem('serverApiToken')
+    const token = localStorage.getItem("serverApiToken");
     const projectId = page.props.match.params.projectId;
     page.setState({
-      sendData: true
-    })
-    axios.post(
-      `${URL}/projects/${projectId}/comments`,
-      formData,
-      { headers: { Authorization: `Bearer ${token}` } }
-    )
-    .then(response => {
-      const data = response.data[0];
-      const newItemList = [...page.state.comments, data]
-      page.setState({
-        comments: newItemList,
-        sendData: false,
-        resetCommentFormSwitch: !page.state.resetCommentFormSwitch
+      sendData: true,
+    });
+    axios
+      .post(`${URL}/projects/${projectId}/comments`, formData, {
+        headers: { Authorization: `Bearer ${token}` },
       })
-    })
-    .catch(error => {
-      console.log(error);
-      page.setState({
-        sendData: false
+      .then((response) => {
+        const data = response.data[0];
+        const newItemList = [...page.state.comments, data];
+        page.setState({
+          comments: newItemList,
+          sendData: false,
+          resetCommentFormSwitch: !page.state.resetCommentFormSwitch,
+        });
       })
-    })
+      .catch((error) => {
+        console.log(error);
+        page.setState({
+          sendData: false,
+        });
+      });
   }
 
   render() {
@@ -109,15 +104,22 @@ class ProjectPage extends React.Component {
     console.log(this.state);
     const { project, comments } = this.state;
     return (
-      <div style={{maxWidth: "1250px", margin: 'auto'}}>
+      <div style={{ maxWidth: "1250px", margin: "auto" }}>
         <div>
-        <h1> {project.name} </h1>
-        <span style={{display: 'block', width: '100%', textAlign: 'center'}}>{project.summary}</span>
+          <h1> {project.name} </h1>
+          <span
+            style={{ display: "block", width: "100%", textAlign: "center" }}
+          >
+            {project.summary}
+          </span>
         </div>
 
         <span> Created at</span>
         <span> {moment(project.created_at).format("YYYY/MM/DD")}</span>
-        <TechStack className="right" techStackAsString={project.selected_stack}/>
+        <TechStack
+          className="right"
+          techStackAsString={project.selected_stack}
+        />
 
         <div></div>
         <div>
@@ -132,14 +134,14 @@ class ProjectPage extends React.Component {
             always (?) shown
           </div>
         </div>
-        {comments.map(comment => this.Comment(comment))}
+        {comments.map((comment) => this.Comment(comment))}
         <div style={{ maxWidth: "80%", margin: "auto" }}>
           <NewCommentForm
             onSubmit={this.handleAddComment}
             disabled={this.state.sendData}
             page={this}
             resetSwitch={this.state.resetCommentFormSwitch}
-            />
+          />
         </div>
       </div>
     );

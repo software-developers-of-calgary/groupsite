@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, withRouter } from "react-router-dom";
-import logo from "../sdc_logo_bold.jpg";
+import logo from "../images/sdc_logo_bold.jpg";
 import { useGlobal } from "../state";
 import "antd/dist/antd.css";
 import Menu from "antd/es/menu";
