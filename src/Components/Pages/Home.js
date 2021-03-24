@@ -1,13 +1,13 @@
 import React from "react";
 import "./Home.css";
 
-import logo from "../../images/sdc_logo_bold.jpg";
+// TODO: Find something for this logo. Logo and name should be separated.
+// import logo from "../../images/sdc_logo_bold.jpg";
 
 class Home extends React.Component {
   render() {
     return (
-      <div className="home-wrapper home-background">
-        <img src={logo} className="title-image" />
+      <div className="home-wrapper">
         <div className="home-content">
           <h2> Welcome </h2>
           <p>
