@@ -1,5 +1,5 @@
 .home-content {
-  min-height: 400px;
+  min-height: 100%;
   background-color: rgb(245, 245, 225, 0.4);
   width: auto;
   margin-left: 10%;
@@ -9,23 +9,15 @@
   padding: 20px;
 }
 
-.home-background {
-  /* background-repeat: no-repeat; */
-  width: auto;
-  height: 1000px;
-  /* background-size: cover; Resize the background image to cover the entire container */
-  /* background-position: center; Center the image */
-}
-
 .title-image {
   width: 60%;
   min-width: 200px;
 }
 
 .home-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-image: url("./../../images/hackathon_background.jpg");
-  background-size: cover;
-  margin-left: -10px;
-  margin-top: -3px;
-  text-align: center;
+  height: 100%;
 }
