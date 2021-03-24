@@ -51,7 +51,7 @@ class App extends Component {
             onClick={(i) => this.handleClick(i)}
             pages={this.state.pages}
           />
-          <div style={{ marginLeft: "10px", minHeight: "calc(100vh - 110px)" }}>
+          <>
             <Switch>
               <Route exact path="/" component={Home} />
               <Route exact path="/home" component={Home} />
@@ -62,7 +62,7 @@ class App extends Component {
               <Route exact path="/projects/" component={Projects} />
               <Route path={`/projects/:projectId`} component={ProjectPage} />
             </Switch>
-          </div>
+          </>
           <Footer></Footer>
         </div>
       </Router>
