@@ -6,7 +6,7 @@ import "antd/dist/antd.css";
 import Menu from "antd/es/menu";
 import Button from "antd/es/button";
 import { fetchUser } from "../state/action";
-
+// TODO: Move auth button to the Projects page; it serves no purpose on the Navbar
 const firstTwoLetters = (str) =>
   !str || str.length < 3 ? str : str.substring(0, 2);
 
