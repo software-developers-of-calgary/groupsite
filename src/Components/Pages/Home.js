@@ -9,16 +9,14 @@ class Home extends React.Component {
     return (
       <div className="home-wrapper">
         <div className="home-content">
-          <h2> Welcome </h2>
+          <h2> Welcome to the Software Developers of Calgary group</h2>
           <p>
-            <i>
-              I was recently at a meetup in another city where a bunch of
-              current/new Software Developers would get together and work on
-              projects, or walk through tutorials together. It was useful. When
-              one person didn't know something, often someone else did. It was
-              just a helpful way to learn and grow as a software developer.{" "}
-              <br></br>Simon - January 26, 2019
-            </i>
+            I was recently at a meetup in another city where a bunch of
+            current/new Software Developers would get together and work on
+            projects, or walk through tutorials together. It was useful. When
+            one person didn't know something, often someone else did. It was
+            just a helpful way to learn and grow as a software developer.{" "}
+            <span className="quote-author">Simon - January 26, 2019</span>
           </p>
           <p>
             I wanted to get this started as a regular thing in Calgary, where
@@ -31,8 +29,7 @@ class Home extends React.Component {
             developers growing as quickly as we are able. But primarily we host
             monthly "mini-hackathons" where we spend a day coding in groups,
             then towards the end of the day we share what we've learned!
-            <br />
-            Simon - January 25.2021
+            <span className="quote-author">Simon - January 25.2021</span>
           </p>
         </div>
       </div>
