@@ -19,7 +19,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      pages: ["Home", "Tutorial", "Events", "Projects", "Join us", "Contact"],
+      pages: ["Home", "Tutorial", "Events", "Projects", "Contact"],
       page: "Home",
     };
   }
