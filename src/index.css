@@ -1,6 +1,8 @@
 html,
 body,
-#root {
+#root,
+.content,
+main {
   height: 100%;
 }
 

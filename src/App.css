@@ -1,9 +1,13 @@
+:root {
+  --primary: #e5e5e5;
+  --secondary: #f0f0f0;
+}
+
 .content {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  background-color: white;
-  height: 100vh;
+  background-color: var(--secondary);
 }
 
 nav {
@@ -17,16 +21,24 @@ nav {
   opacity: 0.5;
 }
 
-/* .show{
-  background-color: #eee;
-} */
-
 .nav-link:hover {
   cursor: pointer;
 }
 
 footer {
-  text-align: center;
+  height: 50px;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--primary);
+  margin-right: 10%;
+  margin-left: 10%;
+}
+
+footer div a {
+  margin: 0 5px;
 }
 
 .CCnavigate {
@@ -40,7 +52,6 @@ footer {
   padding-left: 3%;
   padding-right: 3%;
   min-height: 89vh;
-  /* background-color: #eee; */
 }
 
 .wSidebar {
@@ -74,7 +85,6 @@ footer {
 
 .sidebutton {
   letter-spacing: 1px;
-  font-weight: bold;
 }
 
 .sticky {
@@ -90,7 +100,6 @@ footer {
   padding-top: 10%;
   padding-bottom: 10%;
   overflow: auto;
-  /* background-color: #eee; */
   height: 700px;
   padding: 0 20px 20px 20px;
   margin-top: 20px;
@@ -103,7 +112,7 @@ footer {
 }
 
 .white {
-  color: white;
+  color: var(--secondary);
 }
 
 .invisible {
@@ -113,18 +122,6 @@ footer {
 h1,
 h2 {
   text-align: center;
-}
-
-/*.footer,
-.header {
-  background-color: orange !important;
-}*/
-.header {
-  background-color: rgb(255, 248, 220) !important;
-}
-
-.footer {
-  background-color: rgb(255, 228, 196) !important;
 }
 
 .project-summary {
