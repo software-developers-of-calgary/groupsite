@@ -19,6 +19,7 @@ const techStacks = [
   "PSQL",
   "MySQL",
   "MongoDB",
+  "Serverless",
 ];
 const difficultyLevels = ["Novice", "Confident", "Seasoned", "Hopeless"];
 
@@ -55,7 +56,8 @@ const ProjectForm = (props) => {
     props.onSubmit(values, props.projectsPage);
   };
 
-  const onFinishFailed = (errorInfo) => {}; // this function has to be defined
+  // TODO: This function has to be defined
+  const onFinishFailed = (errorInfo) => {};
 
   return (
     <Form

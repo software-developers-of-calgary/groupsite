@@ -1,8 +1,8 @@
 import React from "react";
 import Login from "./Pages/Login";
 import Events from "./Events";
-import Tutorial from "./Pages/Tutorial";
-import Home from "./Pages/Home";
+import Tutorial from "./Tutorial/Tutorial";
+import Home from "./Home/Home";
 import Projects from "./Pages/Projects";
 
 class Body extends React.Component {

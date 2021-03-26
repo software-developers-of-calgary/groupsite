@@ -1,0 +1,15 @@
+.event {
+  border: 1px solid black;
+  margin: 2% 0;
+  padding: 2%;
+}
+
+.event div {
+  display: block;
+}
+
+.event {
+  .subtitle, .location, .summary {
+    margin-right: 5px;
+  }
+}

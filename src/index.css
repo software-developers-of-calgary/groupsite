@@ -1,22 +1,13 @@
-html,
-body,
-#root,
-.content,
-main {
-  height: 100%;
+:root {
+  --primary: rgba(235, 235, 235, 0.8);
+  --primary-accent: rgba(163, 163, 163, 0.6);
+  --secondary: #f0f0f0;
+  --gold-accent: #fca311;
+  --black: #000000;
+  --blue-accent: #4670c3;
 }
 
-body {
+* {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
 }

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import EventSummary from "./Event";
+import EventSummary from "./Event/Event";
 import { URL } from "../config";
 
 export default class Events extends Component {
@@ -14,11 +14,9 @@ export default class Events extends Component {
       .then((res) => res.json())
       .then(
         (events) => {
-          console.log("response", events);
           this.setState({ isLoaded: true, events });
         },
         (error) => {
-          console.log(error);
           this.setState({
             isLoaded: true,
             error,
@@ -28,8 +26,7 @@ export default class Events extends Component {
   }
 
   renderEvents = () => {
-    var storage_array = this.state.events;
-    console.log("from renderEvents", storage_array);
+    // var storage_array = this.state.events;
     return this.state.events.map((event) => (
       <EventSummary
         title="Virtual Hackhaton"
@@ -49,7 +46,12 @@ export default class Events extends Component {
     } else if (!isLoaded) {
       return <div>Loading...</div>;
     } else {
-      return this.renderEvents();
+      return (
+        <main className="wrapper">
+          <h1>Events</h1>
+          <section className="events">{this.renderEvents()}</section>
+        </main>
+      );
     }
   }
 }

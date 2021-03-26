@@ -3,13 +3,9 @@ import axios from "axios";
 import { URL } from "../../config";
 import { Button, Comment, Avatar, Tooltip, Input } from "antd";
 import moment from "moment";
-import "antd/dist/antd.css";
 import { withRouter } from "react-router";
 import NewCommentForm from "../Common/NewCommentForm";
 import TechStack from "../Common/TechStack/TechStack";
-// import { Image } from '@ant-design/icons'
-
-const { TextArea } = Input;
 
 const firstTwoLetters = (str) =>
   !str || str.length < 3 ? str : str.substring(0, 2);
@@ -49,10 +45,6 @@ class ProjectPage extends React.Component {
     <Comment
       author={<a>{comment.display_name}</a>}
       avatar={
-        //   comment.photo?           <Avatar
-        //   src={<Image src={comment.photo} />}
-        // /> :
-
         <Button type="text" shape="circle">
           {firstTwoLetters(comment.display_name)}
         </Button>
@@ -101,17 +93,13 @@ class ProjectPage extends React.Component {
     if (this.state.hasError) {
       return "Opps some error, pls reload the page";
     }
-    console.log(this.state);
+
     const { project, comments } = this.state;
     return (
       <div style={{ maxWidth: "1250px", margin: "auto" }}>
         <div>
           <h1> {project.name} </h1>
-          <span
-            style={{ display: "block", width: "100%", textAlign: "center" }}
-          >
-            {project.summary}
-          </span>
+          <span>{project.summary}</span>
         </div>
 
         <span> Created at</span>
@@ -121,7 +109,6 @@ class ProjectPage extends React.Component {
           techStackAsString={project.selected_stack}
         />
 
-        <div></div>
         <div>
           <h3>Description</h3>
           {project.description}

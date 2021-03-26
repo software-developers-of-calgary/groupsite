@@ -43,9 +43,9 @@ class ProjectList extends React.Component {
       return <div>Loading...</div>;
     } else {
       return (
-        <div style={{marginBottom: '25px'}}>
+        <>
           {projects.map(project => <ProjectSummary style={style} props={project} key={project.id} /> )}
-        </div>
+        </>
       )
     }
   }

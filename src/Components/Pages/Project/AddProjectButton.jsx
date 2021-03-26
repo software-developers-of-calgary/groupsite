@@ -7,7 +7,7 @@ const AddProjectButton = ({text, action}) => {
   const [global,setGlobal, user] = useGlobal()
   console.log(user)
   return (
-    <div>
+    <div className="project-menu">
     <Button
       style={{float: 'left',
               margin: '20px' }}

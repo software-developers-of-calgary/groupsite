@@ -9,7 +9,7 @@ What you need to do to get involved in the SDC website project is:
 3. Got to your own Fork of the project, usually looks something like this: `http://github.com/[username]/groupsite` and then in your command line `git clone [forked url] SDC-website`
 4. Once it has cloned (aka downloaded) to your computer then run `npm install`
 5. Ready to run the program? `npm start`
-6. Eventually the program will launch your browser as `localhost:3000` and you should see a similar copy to our main website [link](https://sdc.fyi/login)
+6. Eventually the program will launch your browser as `localhost:3000` and you should see a similar copy to our main website [link](https://sdc.fyi)
 
 ## Requirements
 

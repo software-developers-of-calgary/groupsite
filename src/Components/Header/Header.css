@@ -1,0 +1,23 @@
+nav ul,
+footer ul {
+  display: flex;
+  list-style-type: none;
+  margin-bottom: 0;
+}
+
+nav li {
+  margin-right: 10px;
+  margin-bottom: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+  margin-right: 20px;
+}
+
+img {
+  width: 120px;
+  height: 48px;
+  margin-top: 1px;
+}
