@@ -24,20 +24,19 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.4em;
-  height: 50px;
-  text-transform: uppercase;
+  flex-wrap: wrap;
+  height: 150px;
+  padding: 3px;
   border-bottom: 3px solid var(--black);
+  text-transform: uppercase;
 }
 
 footer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  height: 10%;
   border-top: 3px solid var(--black);
-  font-size: 1.2em;
+  font-size: 1em;
 }
 
 nav,
@@ -49,4 +48,27 @@ footer {
 footer a,
 footer div {
   margin: 5px;
+  text-align: center;
+}
+
+
+.wrapper ul {
+  margin-left: 35px;
+}
+
+
+@media all and (min-width: 900px){
+  nav, footer {
+    font-size: 1.2em;
+  }
+
+  nav {
+    height: 50px;
+  }
+
+  footer {
+    height: 15%;
+    max-height: 100px;
+  }
+
 }

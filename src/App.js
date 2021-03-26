@@ -9,7 +9,7 @@ import Home from "./Components/Home/Home";
 import Projects from "./Components/Pages/Projects";
 import EventPage from "./Components/Pages/EventPage";
 
-import "./App.css";
+import "./App.scss";
 
 const App = () => {
   return (

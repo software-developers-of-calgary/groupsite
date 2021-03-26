@@ -21,9 +21,9 @@ const Tutorial = () => {
       </p>
       <h3> What is React?</h3>
       <p>
-        React is a JavaScript UI library developed by Facebook. To learn more:{" "}
+        React is a JavaScript UI library developed by Facebook. Check out{" "}
         <a href="https://www.w3schools.com/whatis/whatis_react.asp">
-          https://www.w3schools.com/whatis/whatis_react.asp
+          W3schools
         </a>
       </p>
       <h2>List of tutorials</h2>
@@ -110,7 +110,7 @@ const Tutorial = () => {
           <a href="https://reactjs.org/docs/react-component.html#componentdidmount">
             componentDidMount()
           </a>
-          &nbsp;and&nbsp;
+          &nbsp;and &nbsp;
           <a href="https://reactjs.org/docs/react-component.html#componentDidUpdate()">
             componentDidUpdate()
           </a>
