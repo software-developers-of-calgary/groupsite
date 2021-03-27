@@ -9,6 +9,7 @@ import Col from 'antd/es/col';
 import TimeLoc from "../Common/TimeLoc";
 import UserList from "../Common/UserList";
 import ProjectList from "./Project/ProjectList";
+import { Link } from "react-router-dom";
 
 class EventPage extends React.Component {
 
@@ -76,6 +77,7 @@ class EventPage extends React.Component {
   }
 
   render() {
+    const eventId = this.props.match.params.eventId;
     if (!this.state.isLoaded) {
       return 'loading' // TODO create comp
     }
@@ -101,6 +103,8 @@ class EventPage extends React.Component {
         </Row>
           <div>
             <h2> Projects </h2>
+            <Link to={`${eventId}/projects/new`}> Add new project</Link>
+            <button>Add existing project</button>
             <ProjectList onProjectLoaded={projects => this.setState({projects})} projects={this.state.projects} style={{margin: 'auto', marginTop: '10px', marginBorron: '10px' }}/>
           </div>
       </div>
