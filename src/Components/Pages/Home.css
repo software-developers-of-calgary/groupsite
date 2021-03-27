@@ -1,12 +1,12 @@
 .home-content {
   min-height: 400px;
-  background-color: rgb(245,245,225, 0.4);
+  background-color: rgb(245, 245, 225, 0.4);
   width: auto;
   margin-left: 10%;
   margin-right: 10%;
   font-weight: bold;
   font-size: 15px;
-  padding: 20px
+  padding: 20px;
 }
 
 .home-background {
@@ -23,7 +23,7 @@
 }
 
 .home-wrapper {
-  background-image: url("../../hackathon_background.jpg");
+  background-image: url("../../images/hackathon_background.jpg");
   background-size: cover;
   margin-left: -10px;
   margin-top: -3px;
