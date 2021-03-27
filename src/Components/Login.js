@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router";
-import githubIcon from "../../images/GitHub.png";
-import { URL } from "../../config";
+import githubIcon from "../images/GitHub.png";
+import { URL } from "../config";
 import qs from "query-string";
-import { useGlobal } from "../../state";
-import { fetchUser } from "../../state/action";
+import { useGlobal } from "../state";
+import { fetchUser } from "../state/action";
 
 const backendEndpoint = URL;
 

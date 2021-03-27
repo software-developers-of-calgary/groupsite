@@ -1,5 +1,5 @@
 import React from "react";
-import Tag from 'antd/es/tag'
+// import Tag from 'antd/es/tag'
 
 
 // const colors = [ 'pink', 'red', 'yellow', 'orange', 'cyan', 'green', 'blue', 'purple', 'geekblue', 'magenta', 'volcano', 'gold', 'lime']
@@ -23,7 +23,7 @@ const getRandomVariant = () => colors[Math.floor(Math.random()*colors.length)]
 const TechStack = ({ className = '', techStackAsString }) => (
   <div>
     {techStackAsString && techStackAsString.split(',').map(tech =>
-      <Tag className={className} key={`${tech}-badge`} color={colors[tech]} style={{marginRight: "20px"}}> {tech} </Tag>
+      <div className={className} key={`${tech}-badge`} color={colors[tech]} style={{marginRight: "20px"}}> {tech} </div>
     )}
   </div>)
 

@@ -1,13 +1,13 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { Header, Footer } from "./Components";
-import Login from "./Components/Pages/Login";
+import Login from "./Components/Login";
 import Events from "./Components/Events";
-import ProjectPage from "./Components/Pages/ProjectPage";
+import ProjectPage from "./Components/Project/ProjectPage";
 import Tutorial from "./Components/Tutorial/Tutorial";
 import Home from "./Components/Home/Home";
-import Projects from "./Components/Pages/Projects";
-import EventPage from "./Components/Pages/EventPage";
+import Projects from "./Components/Project/Projects";
+import EventPage from "./Components/Event/EventPage";
 
 import "./App.scss";
 

@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import ProjectForm from "./NewProject";
 import axios from "axios";
 import { URL } from "../../config";
-import AddProjectButton from "./Project/AddProjectButton";
-import ProjectList from "./Project/ProjectList";
+import AddProjectButton from "./AddProjectButton";
+import ProjectList from "./ProjectList";
 
 class Projects extends Component {
   constructor(props) {
@@ -54,25 +54,23 @@ class Projects extends Component {
 
   render() {
     return (
-      <div className="home-wrapper">
-        <div className="home-content">
-          <ProjectForm
-            onSubmit={this.handleAddProject}
-            projectsPage={this}
-            display={this.state.showProjectForm ? "block" : "none"}
-            resetSwitch={this.state.resetProjectFormSwitch}
-          />
-          <AddProjectButton
-            action={() => {
-              this.setState({ showProjectForm: !this.state.showProjectForm });
-            }}
-            text={this.state.showProjectForm ? "Cancel" : "Add new project"}
-          />
-          <ProjectList
-            onProjectLoaded={(projects) => this.setState({ projects })}
-            projects={this.state.projects}
-          />
-        </div>
+      <div className="wrapper">
+        <ProjectForm
+          onSubmit={this.handleAddProject}
+          projectsPage={this}
+          display={this.state.showProjectForm ? "block" : "none"}
+          resetSwitch={this.state.resetProjectFormSwitch}
+        />
+        <AddProjectButton
+          action={() => {
+            this.setState({ showProjectForm: !this.state.showProjectForm });
+          }}
+          text={this.state.showProjectForm ? "Cancel" : "Add new project"}
+        />
+        <ProjectList
+          onProjectLoaded={(projects) => this.setState({ projects })}
+          projects={this.state.projects}
+        />
       </div>
     );
   }

@@ -21,7 +21,7 @@ export default class AddProject extends React.Component {
         {this.state.error && <p>{this.state.error}</p>}
         <form onSubmit={this.handleAddProject}>
           <input type="text" name="project"></input>
-          <button className="button">Add Project</button>
+          <button className="button">!!!Add Project</button>
         </form>
       </div>
     );

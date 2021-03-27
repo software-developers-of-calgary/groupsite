@@ -1,9 +1,9 @@
 import React from "react";
-import Login from "./Pages/Login";
+import Login from "./Login";
 import Events from "./Events";
 import Tutorial from "./Tutorial/Tutorial";
 import Home from "./Home/Home";
-import Projects from "./Pages/Projects";
+import Projects from "./Project/Projects";
 
 class Body extends React.Component {
   render() {
