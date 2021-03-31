@@ -1,9 +1,8 @@
-import Header from './Header';
+import Header from "./Header/Header";
+import Footer from "./Footer/Footer";
+import Body from "./Body";
+import Login from "./Login";
+import Events from "./Events";
+import Tutorials from "./Tutorial/Tutorial";
 
-import Footer from './Footer';
-import Body from './Body';
-import Login from './Pages/Login';
-import Events from './Events';
-import Tutorials from "./Pages/Tutorial";
-
-export { Header, Footer, Body, Login, Events, Tutorials }
+export { Header, Footer, Body, Login, Events, Tutorials };

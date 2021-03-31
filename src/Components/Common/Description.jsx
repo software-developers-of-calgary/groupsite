@@ -1,9 +1,8 @@
 import React from 'react';
-import Button from "antd/es/button";
 
 
 const collapsedData = (onChange, data) => {
-return <span> {data.substring(0, 250)} <Button style={{padding: '0px'}} type="link" onClick={onChange}>... </Button> </span>
+  return <span> {data.substring(0, 250)} <button type="submit" onClick={onChange}>... </button> </span>
 }
 
 const Description = (props) => {

@@ -1,0 +1,32 @@
+nav ul,
+footer ul {
+  display: flex;
+  list-style-type: none;
+  margin-bottom: 0;
+}
+
+nav ul {
+  flex-wrap: wrap;
+}
+
+nav li {
+  margin-bottom: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+  margin-right: 20px;
+}
+
+img {
+  /* width: 120px; */
+  height: 48px;
+  padding-bottom: 7px;
+}
+
+@media all and (min-width: 900px) {
+  nav li {
+    margin-right: 10px;
+  }
+}

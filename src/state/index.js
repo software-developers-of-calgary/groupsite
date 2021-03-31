@@ -1,12 +1,12 @@
-import {setGlobal} from 'reactn'
+import { setGlobal } from "reactn";
 
 setGlobal({
-  server: '/api/',
-  token: '',
+  server: "/api/",
+  token: "",
   user: null,
   projects: null,
   tasks: [],
-  currentProject: null
-})
+  currentProject: null,
+});
 
-export {useGlobal, resetGlobal} from 'reactn'
+export { useGlobal, resetGlobal } from "reactn";
