@@ -16,4 +16,4 @@ export function fetchUser(token, global, setGlobal) {
       console.log("error", error);
     });
 }
-// TODO test
+// TODO test hello
