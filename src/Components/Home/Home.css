@@ -8,10 +8,7 @@
   flex-grow: 2;
 }
 
-.title-image {
-  width: 60%;
-  min-width: 200px;
-}
+
 
 .home-wrapper {
   display: flex;
@@ -20,8 +17,14 @@
   background-image: url("./../../images/hackathon_background.jpg");
   height: 100%;
 }
+*/
+
+.title-image {
+  width: 60%;
+  min-width: 200px;
+}
 
 .quote-author {
   display: block;
   text-align: end;
-} */
+}
