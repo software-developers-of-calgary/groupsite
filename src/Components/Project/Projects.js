@@ -12,9 +12,7 @@ class Projects extends Component {
       error: null,
       showProjectForm: false,
       resetProjectFormSwitch: false,
-      isLoaded: false,
-      list: [],
-      keys: {},
+      projects: [],
     };
   }
 

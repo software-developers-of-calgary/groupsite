@@ -103,8 +103,8 @@ import React, { useEffect } from "react";
 //     </Form>
 //   );
 // };
-const ProjectForm = () => {
-  return {};
+const ProjectForm = (props) => {
+  return <span style={{ display: props.display }}>Work in progress</span>;
 };
 
 export default ProjectForm;
