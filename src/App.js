@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import { Header, Footer, Body } from "./Components";
+import { Header, Footer } from "./Components";
 import Login from "./Components/Pages/Login";
 import Events from "./Components/Events";
 import ProjectPage from "./Components/Pages/ProjectPage";
