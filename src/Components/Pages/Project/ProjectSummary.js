@@ -1,6 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import TechStack from "../Common/TechStack/TechStack";
+import TechStack from "../../Common/TechStack/TechStack";
 
 const projectClicked = (history, projectId) =>
   history.push(`/projects/${projectId}`);

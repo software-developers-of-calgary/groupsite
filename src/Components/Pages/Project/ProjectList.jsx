@@ -1,5 +1,5 @@
 import React from "react";
-import ProjectSummary from '../ProjectSummary';
+import ProjectSummary from './ProjectSummary';
 import { URL } from "../../../config";
 
 class ProjectList extends React.Component {

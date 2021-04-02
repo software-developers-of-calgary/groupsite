@@ -1,9 +1,9 @@
 import React from "react";
 import ProjectForm from "./NewProject";
 import axios from "axios";
-import { URL } from "../../config";
-import AddProjectButton from "./Project/AddProjectButton";
-import ProjectList from "./Project/ProjectList";
+import { URL } from "../../../config";
+import AddProjectButton from "./AddProjectButton";
+import ProjectList from "./ProjectList";
 
 class Projects extends React.Component {
   constructor(props) {

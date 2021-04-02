@@ -1,12 +1,12 @@
 import React from "react";
 import axios from "axios";
-import { URL } from "../../config";
+import { URL } from "../../../config";
 import { Button, Comment, Avatar, Tooltip, Input } from "antd";
 import moment from "moment";
 import "antd/dist/antd.css";
 import { withRouter } from "react-router";
-import NewCommentForm from "../Common/NewCommentForm";
-import TechStack from "../Common/TechStack/TechStack";
+import NewCommentForm from "../../Common/NewCommentForm";
+import TechStack from "../../Common/TechStack/TechStack";
 // import { Image } from '@ant-design/icons'
 
 const { TextArea } = Input;
