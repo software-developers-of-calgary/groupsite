@@ -8,7 +8,7 @@ import NewCommentForm from "../Common/NewCommentForm";
 import TechStack from "../Common/TechStack/TechStack";
 
 const ProjectPage = () => {
-  return {};
+  return "work in progress";
 };
 
 // const firstTwoLetters = (str) =>

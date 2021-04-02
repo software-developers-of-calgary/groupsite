@@ -9,7 +9,7 @@ import UserList from "../Common/UserList";
 import ProjectList from "../Project/ProjectList";
 
 const EventPage = () => {
-  return {}
+  return 'work in progress'
 }
 
 // class EventPage extends React.Component {

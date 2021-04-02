@@ -35,7 +35,7 @@ const UserList = (props) => {
 
   //   </div>
   // );
-  return {}
+  return 'work in progress'
 }
 
 export default UserList;

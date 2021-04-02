@@ -60,7 +60,7 @@ const NewCommentForm = props => {
   //     </Form.Item>
   //   </Form>
   // );
-  return {}
+  return  'work in progress'
 };
 
 export default NewCommentForm

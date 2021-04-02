@@ -4,7 +4,7 @@ import React from "react";
 import "./SideMenu.css";
 
 const SideMenu = () => {
-  return {};
+  return "work in progress";
   // }
   // class SideMenu extends React.Component {
   //   constructor(props) {
