@@ -2,12 +2,12 @@ import React, { Component } from "react";
 import "./App.css";
 import { Header, Footer } from "./Components";
 import Login from "./Components/Pages/Login";
-import Events from "./Components/Events";
+import Events from "./Components/Pages/Event/Events";
 import ProjectPage from "./Components/Pages/Project/ProjectPage";
 import Tutorial from "./Components/Pages/Tutorial";
 import Home from "./Components/Pages/Home";
 import Projects from "./Components/Pages/Project/Projects";
-import EventPage from "./Components/Pages/EventPage";
+import EventPage from "./Components/Pages/Event/EventPage";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 

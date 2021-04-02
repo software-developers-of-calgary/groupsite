@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import EventSummary from "./Event";
-import { URL } from "../config";
+import { URL } from "../../../config";
 
 export default class Events extends Component {
   state = {

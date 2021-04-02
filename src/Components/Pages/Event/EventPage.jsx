@@ -1,14 +1,14 @@
 import React from "react";
 import axios from 'axios';
-import { URL } from "../../config";
+import { URL } from "../../../config";
 import 'antd/dist/antd.css';
 import { withRouter } from "react-router-dom";
-import Description from '../Common/Description'
+import Description from '../../Common/Description'
 import Row from 'antd/es/row';
 import Col from 'antd/es/col';
-import TimeLoc from "../Common/TimeLoc";
-import UserList from "../Common/UserList";
-import ProjectList from "./Project/ProjectList";
+import TimeLoc from "./TimeLoc";
+import UserList from "./UserList";
+import ProjectList from "../Project/ProjectList";
 
 class EventPage extends React.Component {
 
