@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from "antd/es/button";
-import { useGlobal } from '../../state';
+import { useGlobal } from '../../../state';
 
 const firstTwoLetters = (str) =>
   !str || str.length < 3 ? str : str.substring(0, 2);
