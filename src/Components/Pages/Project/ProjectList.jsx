@@ -1,17 +1,13 @@
 import React from "react";
 import ProjectSummary from './ProjectSummary';
-import { URL } from "../../../config";
+import { queryProjects } from "../../../adapters/API/projects"
 
 class ProjectList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       error: null,
-      showProjectForm :false,
-      resetProjectFormSwitch: false,
-      isLoaded: false,
-      list: [],
-      keys : {}
+      isLoaded: false
     };
   }
 
@@ -21,20 +17,11 @@ class ProjectList extends React.Component {
       this.setState({ isLoaded: true });
       return
     }
-    fetch(URL + "/projects")
-      .then(res => res.json())
-      .then(
-        (result) => {
-          this.setState({ isLoaded: true });
-          this.props.onProjectLoaded(result.reverse())
-        },
-        (error) => {
-          this.setState({
-            isLoaded: true,
-            error
-          });
-        }
-      )
+    queryProjects()
+    .then(({ error, data }) => {
+      this.setState({ isLoaded: true, error });
+      this.props.onProjectLoaded(data.reverse())
+    })
   }
 
   render() {
