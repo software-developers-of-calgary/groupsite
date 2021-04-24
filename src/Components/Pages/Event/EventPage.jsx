@@ -10,6 +10,7 @@ import TimeLoc from "./TimeLoc";
 import UserList from "./UserList";
 import ProjectList from "../Project/ProjectList";
 import { Link } from "react-router-dom";
+import { Modal, Button } from 'antd';
 
 class EventPage extends React.Component {
 
@@ -26,7 +27,8 @@ class EventPage extends React.Component {
       name: '',
       open: '',
       users: [],
-      description: ''
+      description: '',
+      isAddProjectModalVisible: false
     };
   }
 
@@ -76,6 +78,19 @@ class EventPage extends React.Component {
     this.setState({isCollapsedSummary: !this.state.isCollapsedSummary})
   }
 
+  showModal = () => {
+    this.setState({setIsModalVisible: true})
+  };
+
+  handleOk = () => {
+    console.log('handle ok')
+    this.setState({setIsModalVisible: false})
+  };
+
+  handleCancel = () => {
+    this.setState({setIsModalVisible: false})
+  };
+
   render() {
     const eventId = this.props.match.params.eventId;
     if (!this.state.isLoaded) {
@@ -105,6 +120,14 @@ class EventPage extends React.Component {
             <h2> Projects </h2>
             <Link to={`${eventId}/projects/new`}> Add new project</Link>
             <button>Add existing project</button>
+            <Button type="primary" onClick={() => this.setState({isAddProjectModalVisible: true})}>
+        Open Modal
+      </Button>
+      <Modal title="Basic Modal" visible={this.state.isAddProjectModalVisible} onOk={() => this.handleOk()} onCancel={() => this.handleCancel()}>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+      </Modal>
             <ProjectList onProjectLoaded={projects => this.setState({projects})} projects={this.state.projects} style={{margin: 'auto', marginTop: '10px', marginBorron: '10px' }}/>
           </div>
       </div>
