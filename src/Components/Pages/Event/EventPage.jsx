@@ -79,16 +79,16 @@ class EventPage extends React.Component {
   }
 
   showModal = () => {
-    this.setState({setIsModalVisible: true})
+    this.setState({isAddProjectModalVisible: true})
   };
 
   handleOk = () => {
-    console.log('handle ok')
-    this.setState({setIsModalVisible: false})
+    console.log('handle ok', this)
+    this.setState({isAddProjectModalVisible: false})
   };
 
   handleCancel = () => {
-    this.setState({setIsModalVisible: false})
+    this.setState({isAddProjectModalVisible: false})
   };
 
   render() {
