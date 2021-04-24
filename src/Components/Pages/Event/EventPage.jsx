@@ -94,8 +94,8 @@ class EventPage extends React.Component {
   associateProjectWithEvent = (projectId, eventId) => {
     const token = localStorage.getItem("serverApiToken");
     axios
-      .put(
-        URL + `/event/${eventId}/projects`,
+      .post(
+        URL + `/events/${eventId}/projects`,
         {
           projectId: projectId,
         },
@@ -154,7 +154,7 @@ class EventPage extends React.Component {
             Add Existing Project
           </Button>
           <Modal
-            title="Basic Modal"
+            title={"Add Project to " + this.state.name}
             visible={this.state.isAddProjectModalVisible}
             footer={[]}
             onCancel={this.handleCancel}
