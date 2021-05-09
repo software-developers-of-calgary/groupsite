@@ -1,4 +1,4 @@
-import React from "react";
+import React from "reactn";
 import axios from "axios";
 import { URL } from "../../../config";
 import "antd/dist/antd.css";
@@ -158,10 +158,15 @@ class EventPage extends React.Component {
         </Row>
         <div>
           <h2> Projects </h2>
-          <Link to={`${eventId}/projects/new`}> Add new project</Link>
+          <Link to={`${eventId}/projects/new`}>
+            <Button type="primary" disabled = {!this.global.user}>
+              Add new project
+            </Button>
+          </Link>
           <Button
             type="primary"
             onClick={() => this.setState({ isAddProjectModalVisible: true })}
+            disabled = {!this.global.user}
           >
             Add Existing Project
           </Button>
