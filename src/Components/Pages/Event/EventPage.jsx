@@ -38,7 +38,7 @@ class EventPage extends React.Component {
     fetch(URL + `/events/${eventId}`)
       .then((res) => res.json())
       .then(
-        ({ date, description, location, name, open, users }) => {
+        ({ date, description, location, name, open, users, projects }) => {
           this.setState({
             isLoaded: true,
             date,
@@ -47,6 +47,7 @@ class EventPage extends React.Component {
             users,
             name,
             open,
+            eventProjects: projects
           });
         },
         (error) => {
@@ -57,6 +58,17 @@ class EventPage extends React.Component {
           });
         }
       );
+
+    fetch(URL + "/projects")
+      .then(res => res.json())
+      .then(
+        (result) => {
+          this.setState({ projects: result.reverse() });
+        },
+        (error) => {
+          this.setState({error});
+        }
+      )
   }
 
   registerUserForEvent(props) {
@@ -102,7 +114,7 @@ class EventPage extends React.Component {
         { headers: { Authorization: `Bearer ${token}` } }
       )
       .then((response) => {
-        this.setState({ projects: response.data });
+        this.setState({ eventProjects: response.data });
         this.handleCancel();
       })
       .catch((error) => {
@@ -160,7 +172,7 @@ class EventPage extends React.Component {
             onCancel={this.handleCancel}
           >
             <div className="modal-container">
-              {this.state.projects?.map((project) => (
+              {this.state.projects?.filter(project => !this.state.eventProjects.map(ep => ep.id).includes(project.id)).map((project) => (
                 <div className="modal-project">
                   <Link
                     to={`/projects/${project.id}`}
@@ -187,8 +199,8 @@ class EventPage extends React.Component {
             </div>
           </Modal>
           <ProjectList
-            onProjectLoaded={(projects) => this.setState({ projects })}
-            projects={this.state.projects}
+            skipLoad
+            projects={this.state.eventProjects}
             style={{ margin: "auto", marginTop: "10px", marginBorron: "10px" }}
           />
         </div>
