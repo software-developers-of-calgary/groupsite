@@ -20,8 +20,6 @@ class EventPage extends React.Component {
       isCollapsedSummary: true,
       error: null,
       isLoaded: false,
-      list: [],
-      keys: {},
       date: "",
       location: "",
       name: "",
