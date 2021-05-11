@@ -123,32 +123,34 @@ class EventPage extends React.Component {
 
   render() {
     const eventId = this.props.match.params.eventId;
-    if (!this.state.isLoaded) {
+    const { date, error, eventProjects = [], location, isLoaded, name, open, projects = [], users, description, isCollapsedSummary, isAddProjectModalVisible } = this.state
+    if (!isLoaded) {
       return "loading"; // TODO create comp
     }
-    if (this.state.error) {
+    if (error) {
       return "unexpected error"; // TODO create comp
     }
     // const isAddUserButtonEnabled = this.state.date
+    const availableProjects = projects.filter(project => !eventProjects.map(ep => parseInt(ep.project_id)).includes(project.id))
     return (
       <div>
         <br />
-        <h2> {this.state.name} </h2>
+        <h2> {name} </h2>
         <Row>
           <Col span={7}>
-            <TimeLoc date={this.state.date} location={this.state.location} />{" "}
+            <TimeLoc date={date} location={location} />{" "}
             <br />
             <UserList
-              disabled={!this.state.open}
-              users={this.state.users}
+              disabled={!open}
+              users={users}
               register={() => this.registerUserForEvent(this.props)}
             />
           </Col>
           <Col span={1}></Col>
           <Col span={15}>
             <Description
-              data={this.state.description}
-              collapsed={this.state.isCollapsedSummary}
+              data={description}
+              collapsed={isCollapsedSummary}
               onChange={this.switchCollapse}
             />
           </Col>
@@ -169,13 +171,13 @@ class EventPage extends React.Component {
             Add Existing Project
           </Button>
           <Modal
-            title={"Add Project to " + this.state.name}
-            visible={this.state.isAddProjectModalVisible}
+            title={"Add Project to " + name}
+            visible={isAddProjectModalVisible}
             footer={[]}
             onCancel={this.handleCancel}
           >
             <div className="modal-container">
-              {this.state.projects?.filter(project => !this.state.eventProjects.map(ep => ep.id).includes(project.id)).map((project) => (
+              {availableProjects.map((project) => (
                 <div className="modal-project">
                   <Link
                     to={`/projects/${project.id}`}
