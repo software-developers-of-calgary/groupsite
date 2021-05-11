@@ -8,6 +8,7 @@ import Tutorial from "./Components/Pages/Tutorial";
 import Home from "./Components/Pages/Home";
 import Projects from "./Components/Pages/Project/Projects";
 import EventPage from "./Components/Pages/Event/EventPage";
+import CreateEventProject from "./Components/Pages/CreateEventProject";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -43,7 +44,11 @@ class App extends Component {
               <Route exact path="/" component={Home} />
               <Route exact path="/home" component={Home} />
               <Route exact path="/events" component={Events} />
-              <Route path={`/events/:eventId`} component={EventPage} />
+              <Route exact path={`/events/:eventId`} component={EventPage} />
+              <Route
+                path={`/events/:eventId/projects/new`}
+                component={CreateEventProject}
+              />
               <Route exact path="/tutorial" component={Tutorial} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/projects/" component={Projects} />

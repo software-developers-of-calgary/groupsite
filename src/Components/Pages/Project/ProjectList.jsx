@@ -17,6 +17,10 @@ class ProjectList extends React.Component {
 
 
   componentDidMount() {
+    if( this.props.skipLoad ) {
+      this.setState({ isLoaded: true });
+      return
+    }
     fetch(URL + "/projects")
       .then(res => res.json())
       .then(

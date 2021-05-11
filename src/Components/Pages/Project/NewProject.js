@@ -1,4 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { URL } from "../../../config";
 import "antd/dist/antd.css";
 import Form from "antd/es/form";
 import Input from "antd/es/input";
@@ -37,6 +39,31 @@ const tailLayout = {
   },
 };
 
+const handleAddProject = (formData, handleProjectCreated) => {
+  const token = localStorage.getItem("serverApiToken");
+  const selected_stack = (formData.technologies || []).map(
+    (tech) => tech.value
+  );
+  axios
+    .post(
+      URL + "/projects",
+      {
+        name: formData.name,
+        description: formData.description,
+        selected_stack,
+        summary: formData.summary,
+      },
+      { headers: { Authorization: `Bearer ${token}` } }
+    )
+    .then((response) => {
+      const project = response.data[0];
+      handleProjectCreated(project);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
+
 const getTechStackOptions = () =>
   techStacks.map((tech) => (
     <Option key={tech} value={tech}>
@@ -51,8 +78,11 @@ const ProjectForm = (props) => {
     form.resetFields();
   }, [props.resetSwitch]);
 
+  const [submitDisabled, setSubmitDisabled] = useState(false);
+
   const onFinish = (values) => {
-    props.onSubmit(values, props.projectsPage);
+    setSubmitDisabled(true);
+    handleAddProject(values, props.handleProjectCreated);
   };
 
   const onFinishFailed = (errorInfo) => {}; // this function has to be defined
@@ -99,7 +129,7 @@ const ProjectForm = (props) => {
         </Button>
       </Form.Item>
       <Form.Item {...tailLayout}>
-        <Button type="primary" htmlType="submit">
+        <Button type="primary" htmlType="submit" disabled={submitDisabled}>
           Submit
         </Button>
       </Form.Item>

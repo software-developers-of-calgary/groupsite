@@ -1,0 +1,20 @@
+.modal-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.modal-project {
+  display: flex;
+  padding: 5px;
+}
+
+.modal-add-button {
+  margin-right: 0;
+  align-self: flex-end;
+}
+
+.title {
+  width: 300px;
+}
