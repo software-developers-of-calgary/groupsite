@@ -12,6 +12,7 @@ import ProjectList from "../Project/ProjectList";
 import { Link } from "react-router-dom";
 import { Modal, Button } from "antd";
 import "./EventPage.css";
+import { addUserToEvent } from "../../../adapters/API/projects";
 
 class EventPage extends React.Component {
   constructor(props) {
@@ -70,18 +71,10 @@ class EventPage extends React.Component {
   }
 
   registerUserForEvent(props) {
-    const token = localStorage.getItem("serverApiToken");
     const eventId = props.match.params.eventId;
-    axios
-      .post(`${URL}/events/${eventId}/users`, "{}", {
-        headers: { Authorization: `Bearer ${token}` },
-      })
-      .then((response) => {
-        this.setState({ users: response.data });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    addUserToEvent(eventId).then(({ error, users }) => {
+      this.setState({ error, users });
+    })
   }
 
   switchCollapse = () => {
