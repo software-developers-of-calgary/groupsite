@@ -1,9 +1,8 @@
 import React from "react";
 import ProjectForm from "./NewProject";
-import axios from "axios";
-import { URL } from "../../../config";
 import AddProjectButton from "./AddProjectButton";
 import ProjectList from "./ProjectList";
+import { createProject } from "../../../adapters/API/projects";
 
 class Projects extends React.Component {
   constructor(props) {
@@ -12,10 +11,28 @@ class Projects extends React.Component {
       error: null,
       showProjectForm: false,
       resetProjectFormSwitch: false,
-      isLoaded: false,
       list: [],
-      keys: {},
     };
+  }
+
+  handleAddProject(formData, projectsPage) {
+    const selected_stack = (formData.technologies || []).map(
+      (tech) => tech.value
+    );
+    createProject({
+      name: formData.name,
+      description: formData.description,
+      selected_stack,
+      summary: formData.summary,
+    }).then(({ error, data }) => {
+      const newItemList = [data[0]].concat(projectsPage.state.projects);
+      console.log(newItemList);
+      projectsPage.setState({
+        projects: newItemList,
+        resetProjectFormSwitch: !projectsPage.state.resetProjectFormSwitch,
+        showProjectForm: false,
+      });
+    });
   }
 
   changeFormVisibility() {

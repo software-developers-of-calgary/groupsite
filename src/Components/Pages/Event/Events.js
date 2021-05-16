@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import EventSummary from "./Event";
+import EventSummary from "./EventSummary";
 import { URL } from "../../../config";
 
 export default class Events extends Component {

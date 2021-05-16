@@ -1,5 +1,4 @@
 import React from "reactn";
-import axios from "axios";
 import { URL } from "../../../config";
 import "antd/dist/antd.css";
 import { withRouter } from "react-router-dom";
@@ -12,6 +11,7 @@ import ProjectList from "../Project/ProjectList";
 import { Link } from "react-router-dom";
 import { Modal, Button } from "antd";
 import "./EventPage.css";
+import { addUserToEvent, associateProjectWithEvent } from "../../../adapters/API/projects";
 
 class EventPage extends React.Component {
   constructor(props) {
@@ -70,18 +70,10 @@ class EventPage extends React.Component {
   }
 
   registerUserForEvent(props) {
-    const token = localStorage.getItem("serverApiToken");
     const eventId = props.match.params.eventId;
-    axios
-      .post(`${URL}/events/${eventId}/users`, "{}", {
-        headers: { Authorization: `Bearer ${token}` },
-      })
-      .then((response) => {
-        this.setState({ users: response.data });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    addUserToEvent(eventId).then(({ error, users }) => {
+      this.setState({ error, users });
+    })
   }
 
   switchCollapse = () => {
@@ -101,25 +93,15 @@ class EventPage extends React.Component {
     this.setState({ isAddProjectModalVisible: false });
   };
 
-  associateProjectWithEvent = (projectId, eventId) => {
-    const token = localStorage.getItem("serverApiToken");
-    axios
-      .post(
-        URL + `/events/${eventId}/projects`,
-        {
-          projectId: projectId,
-        },
-        { headers: { Authorization: `Bearer ${token}` } }
-      )
-      .then((response) => {
-        this.setState({ eventProjects: response.data });
-        this.handleCancel();
-      })
-      .catch((error) => {
-        console.log(error);
-        this.handleCancel();
-      });
-  };
+  addProject = (projectId, eventId) => associateProjectWithEvent(projectId, eventId)
+    .then((response) => {
+      this.setState({ eventProjects: response.data });
+      this.handleCancel();
+    })
+    .catch((error) => {
+      console.log(error);
+      this.handleCancel();
+    });
 
   render() {
     const eventId = this.props.match.params.eventId;
@@ -190,7 +172,7 @@ class EventPage extends React.Component {
                   <Button
                     className="modal-add-button"
                     onClick={() =>
-                      this.associateProjectWithEvent(
+                      this.addProject(
                         project.id,
                         this.props.match.params.eventId
                       )
