@@ -1,12 +1,12 @@
 import React from "react";
 import ProjectForm from "./Project/NewProject";
-import associateProjectWithEvent from "./Event/associateProjectWithEvent";
+import { associateProjectWithEvent } from "../../adapters/API/projects";
 import { useHistory } from "react-router-dom";
 
 export default function CreateEventProject(props) {
   const eventId = props.match.params.eventId;
-
   const history = useHistory();
+
   const onProjectCreated = (project) =>
     associateProjectWithEvent(project.id, eventId)
       .then((response) => {

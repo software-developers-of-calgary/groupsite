@@ -41,3 +41,14 @@ export const addUserToEvent = async (eventId) => {
     return handleError(error);
   }
 };
+
+export const associateProjectWithEvent = (projectId, eventId) => {
+  const token = localStorage.getItem("serverApiToken");
+  return post(
+    URL + `/events/${eventId}/projects`,
+    {
+      projectId: projectId,
+    },
+    { headers: { Authorization: `Bearer ${token}` } }
+  );
+};
