@@ -39,22 +39,20 @@ class App extends Component {
             onClick={(i) => this.handleClick(i)}
             pages={this.state.pages}
           />
-          <div style={{ marginLeft: "10px", minHeight: "calc(100vh - 110px)" }}>
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/home" component={Home} />
-              <Route exact path="/events" component={Events} />
-              <Route exact path={`/events/:eventId`} component={EventPage} />
-              <Route
-                path={`/events/:eventId/projects/new`}
-                component={CreateEventProject}
-              />
-              <Route exact path="/tutorial" component={Tutorial} />
-              <Route exact path="/login" component={Login} />
-              <Route exact path="/projects/" component={Projects} />
-              <Route path={`/projects/:projectId`} component={ProjectPage} />
-            </Switch>
-          </div>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/home" component={Home} />
+            <Route exact path="/events" component={Events} />
+            <Route exact path={`/events/:eventId`} component={EventPage} />
+            <Route
+              path={`/events/:eventId/projects/new`}
+              component={CreateEventProject}
+            />
+            <Route exact path="/tutorial" component={Tutorial} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/projects/" component={Projects} />
+            <Route path={`/projects/:projectId`} component={ProjectPage} />
+          </Switch>
           <Footer></Footer>
         </div>
       </Router>
