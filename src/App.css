@@ -3,6 +3,10 @@ body {
 }
 
 .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
   max-width: 1250px;
   margin: auto;
   background-color: white;
@@ -52,7 +56,26 @@ nav {
   padding: 0px, 0px, 8px, 8px;
 }
 footer {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 0.5rem;
+  background-color: black;
+  opacity: 0.9;
+  color: white;
+}
+footer div {
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+}
+
+footer div a:hover {
+  text-decoration: underline;
+}
+
+footer div a span {
+  margin-left: 0.4rem;
 }
 
 .App-link {
@@ -154,16 +177,8 @@ h2 {
   text-align: center;
 }
 
-/*.footer,
 .header {
-  background-color: orange !important;
-}*/
-.header{
-  background-color:rgb(255, 248, 220) !important;
-}
-
-.footer {
-  background-color:rgb(255, 228, 196) !important;
+  background-color: rgb(255, 248, 220) !important;
 }
 
 .project-summary {
