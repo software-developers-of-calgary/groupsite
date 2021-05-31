@@ -1,16 +1,14 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router";
 import githubIcon from "../../images/GitHub.png";
-import { URL } from "../../config";
+import { githubAuthUrl } from "../../config";
 import qs from "query-string";
 import { useGlobal } from "../../state";
-import { fetchUser } from "../../state/action";
+import { session, fetchUser } from "../../state/action";
 
-const backendEndpoint = URL;
-
-const getTokenFromQuery = () => {
+const getCodeFromQuery = () => {
   const queryValues = qs.parse(window.location.search);
-  return queryValues.token;
+  return queryValues.code;
 };
 
 const Login = () => {
@@ -22,7 +20,7 @@ const Login = () => {
     return <Redirect to="/projects" />;
   }
   const storedToken = localStorage.getItem("serverApiToken");
-  const token = getTokenFromQuery();
+  const oneTimeCode = getCodeFromQuery();
 
   if (storedToken && !loadUser) {
     fetchUser(storedToken, global, setGlobal);
@@ -33,10 +31,9 @@ const Login = () => {
         </button>
       </div>
     );
-  } else if (token && !loadingSpinner) {
-    localStorage.setItem("serverApiToken", token);
-    setGlobal({ ...global, token });
+  } else if (oneTimeCode && !loadingSpinner) {
     setLoadingSpinner(true);
+    session(oneTimeCode, global, setGlobal)
     return <Redirect to="/login" />;
   }
 
@@ -70,7 +67,7 @@ const Login = () => {
         />
         <a
           style={{ float: "right", paddingRight: "10px" }}
-          href={backendEndpoint + "/auth/github"}
+          href={githubAuthUrl}
         >
           {" "}
           Login with GitHub{" "}
