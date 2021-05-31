@@ -17,14 +17,13 @@ const Login = () => {
   const [loadingSpinner, setLoadingSpinner] = useState(false);
   const [global, setGlobal] = useGlobal();
   const { loadUser } = global;
-  console.log("global.user");
+
   if (global.user) {
     return <Redirect to="/projects" />;
   }
   const storedToken = localStorage.getItem("serverApiToken");
   const token = getTokenFromQuery();
-  console.log("storedToken", storedToken);
-  console.log("token", token);
+
   if (storedToken && !loadUser) {
     fetchUser(storedToken, global, setGlobal);
     return (
