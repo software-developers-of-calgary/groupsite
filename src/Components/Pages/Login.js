@@ -7,13 +7,17 @@ import { useGlobal } from "../../state";
 import { session, fetchUser } from "../../state/action";
 
 const getCodeFromQuery = () => {
+  console.log("Inside getCodeFromQuery");
   const queryValues = qs.parse(window.location.search);
+  console.log("About to return: ");
+  console.log(queryValues);
   return queryValues.code;
 };
 
 const Login = () => {
   const [loadingSpinner, setLoadingSpinner] = useState(false);
   const [global, setGlobal] = useGlobal();
+  debugger;
   const { loadUser } = global;
 
   if (global.user) {
@@ -33,7 +37,7 @@ const Login = () => {
     );
   } else if (oneTimeCode && !loadingSpinner) {
     setLoadingSpinner(true);
-    session(oneTimeCode, global, setGlobal)
+    session(oneTimeCode, global, setGlobal);
     return <Redirect to="/login" />;
   }
 
