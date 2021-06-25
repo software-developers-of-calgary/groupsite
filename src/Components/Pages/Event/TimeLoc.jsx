@@ -6,7 +6,7 @@ const TimeLoc = ({date, location}) => {
       <>
         <div className='button'>
           <div>
-              Date: {date}
+              Date: {new Date(date).toDateString()}
           </div>
           <div>
               Location: {location}

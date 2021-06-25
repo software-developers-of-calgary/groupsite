@@ -12,7 +12,7 @@ const Description = (props) => {
   return (
     <div>
       <h2> Description</h2>
-      {collapsed?  collapsedData(onChange, data) : data}
+      {collapsed?  collapsedData(onChange, data) : data.split ('\n').map ((item, i) => <p key={i}>{item}</p>)}
     </div>
   );
 }
